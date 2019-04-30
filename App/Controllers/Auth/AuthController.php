@@ -6,6 +6,7 @@ use App\Controllers\Controller;
 
 class AuthController extends Controller {
   public function signUp($request) {
-    return "Hello World!";
+    $data = array('data' => "Hello World!" );
+    parent::view('index', $data);
   }
 }
