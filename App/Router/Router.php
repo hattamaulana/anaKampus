@@ -37,18 +37,22 @@ class Router {
   }
 
   private function defaultRequestHandler() {
-    header("{$this->request->serverProtocol} 404 Not Found");
+    // header("{$this->request->serverProtocol} 404 Not Found");
+    echo "404 Not Found";
   }
   
   function resolve() {
     $methodDictionary = $this->{strtolower($this->request->requestMethod)};
     $formatedRoute = $this->formatRoute($this->request->requestUri);
-    $method = $methodDictionary[$formatedRoute];
-    if(is_null($method)) {
+    $formatedRoute = preg_split("/\?/", $formatedRoute);
+    $formatedRoute = $formatedRoute[0];
+
+    if(! array_key_exists($formatedRoute, $methodDictionary)) {
       $this->defaultRequestHandler();
       return;
     }
 
+    $method    = $methodDictionary[$formatedRoute];
     $method    = preg_split("/\@/", $method);
     $method[0] = "\App\Controllers\\". $method[0];
 

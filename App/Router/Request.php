@@ -31,6 +31,7 @@ class Request implements RequestInterface {
     if($this->requestMethod === "GET") {
       return;
     }
+
     if ($this->requestMethod == "POST") {
       $body = array();
       foreach($_POST as $key => $value) {
