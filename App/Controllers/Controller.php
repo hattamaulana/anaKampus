@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 class Controller {
-  protected function view($view = '', $data = []) {
+  protected function show($view = '', $data = []) {
     $path = __DIR__. "/../Views/";
     
     require_once $path. $view. ".php";

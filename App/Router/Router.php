@@ -37,8 +37,7 @@ class Router {
   }
 
   private function defaultRequestHandler() {
-    // header("{$this->request->serverProtocol} 404 Not Found");
-    echo "404 Not Found";
+    header("Location: /404");
   }
   
   function resolve() {

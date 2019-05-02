@@ -5,7 +5,12 @@ use App\Router\Request;
 
 $route = new Router(new Request());
 
-$route->get('/', 'View\HomeView@show');
-$route->get('/login', 'View\SignInController@show');
-$route->get('/register', 'View\SignUpController@show');
-$route->post('/register', 'Auth\AuthController@signUp');
+$route->get('/404', 'ErrorView@view404');
+
+$route->get('/', 'HomeView@view');
+
+$route->get('/login', 'Auth\SignInController@view');
+$route->post('/login', 'Auth\SignInController@signIn');
+
+$route->get('/register', 'Auth\SignUpController@view');
+$route->post('/register', 'Auth\SignUpController@signUp');
