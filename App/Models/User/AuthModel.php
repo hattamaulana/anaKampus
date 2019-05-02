@@ -4,7 +4,7 @@ namespace App\Models\User;
 
 use App\Models\Model;
 
-class UserModel extends Model {
+class AuthModel extends Model {
   private $model;
 
   public static $uid = 'uid';

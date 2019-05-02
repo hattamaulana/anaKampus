@@ -14,3 +14,5 @@ $route->post('/login', 'Auth\SignInController@signIn');
 
 $route->get('/register', 'Auth\SignUpController@view');
 $route->post('/register', 'Auth\SignUpController@signUp');
+
+$route->get('/profile', 'User\ProfileController@view');
