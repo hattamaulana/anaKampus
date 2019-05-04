@@ -12,12 +12,12 @@ class SignInController extends Controller {
   }
 
   public function signIn($req) {
-    $sesi  = new Session();
-    $user  = new AuthModel();
-    $input = $req->getBody();
-    $input = [
-      $user->email => $input[$user->email],
-      $user->password => $input[$user->password]
+    $sesi = new Session();
+    $user = new AuthModel();
+    $data = $req->getBody();
+    $data = [
+      AuthModel::$email => $data[AuthModel::$email],
+      AuthModel::$password => $data[AuthModel::$password]
     ];
 
     $response = $user->signIn($data);
@@ -30,5 +30,12 @@ class SignInController extends Controller {
     } else {
       header("Location: /login");
     }
+  }
+
+  public function logout() {
+    $sesi = new Session();
+    $sesi->destroy();
+
+    header("Location: /");
   }
 }

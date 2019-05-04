@@ -20,4 +20,11 @@ class Session {
   public function get($key) {
     return $_SESSION[$key[0]];
   }
+
+  public function isExists($key) {
+    if(isset($_SESSION[$key]))
+      return true;
+    else
+      return false;
+  }
 }

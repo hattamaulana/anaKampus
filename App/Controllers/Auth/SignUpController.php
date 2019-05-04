@@ -22,14 +22,14 @@ class SignUpController extends Controller {
       AuthModel::$password => $data[AuthModel::$password]
     ];
 
-    $response = $user->signUp($data);
+    $response = $user->signUp($data, substr($data[AuthModel::$uid], 0, 1));
     if ($response['message'] === 'success'){
       unset($data[AuthModel::$password]);
       $sesi->add($data);
 
       header("Location: /profile");
     } else {
-      header("Location: /login");
+      header("Location: /register");
     }
   }
 

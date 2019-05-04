@@ -133,7 +133,7 @@
 									<hr>
 
 									<li class="nav-item">
-										<a href="#" class="icons">
+										<a href="/profile" class="icons">
 											<i class="fa fa-user" aria-hidden="true"></i>
 										</a>
 									</li>

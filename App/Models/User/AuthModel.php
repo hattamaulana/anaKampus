@@ -7,6 +7,7 @@ use App\Models\Model;
 class AuthModel extends Model {
   private $model;
 
+  public static $TABLE = 'authentications';
   public static $uid = 'uid';
   public static $name = 'name';
   public static $email = 'email';
@@ -14,19 +15,34 @@ class AuthModel extends Model {
 
   public function __construct() {
     $this->model        = parent::getInstance();
-    $this->model->table = 'authentications';
+    $this->model->table = self::$TABLE;
   }
 
-  public function signUp($param = []) {
+  public function print($key, $val) {
+    $return      = [];
+    $whereClause = $key. " = '" .$val. "'";
+    $result      = $this->model->get('', $whereClause);
+
+    while ($user = $result->fetch_assoc())
+        $return = $user;
+    
+    return $return;
+  }
+
+  public function signUp($param = [], $table) {
     $return      = [];
     $whereClause = self::$email. " = '" .$param[self::$email]. "'";
 
     if (! $this->getEmail($whereClause)){
       $param[self::$password] = $this->model->hashPassword($param[self::$password]);
 
-      if ($this->model->insert($param))
-        $return['message'] = 'success';
-      else
+      if($this->model->insert($param)){
+        unset($param[AuthModel::$email]);
+        unset($param[AuthModel::$password]);
+
+        if($this->model->insert($param, ($table == 'S') ? 'seller' : 'buyer'))
+          $return['message'] = 'success';
+      } else
         $return['message'] = 'system-error';
     } else 
       $return['message'] = 'email-exists';
