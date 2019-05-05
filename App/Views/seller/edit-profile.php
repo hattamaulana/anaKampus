@@ -109,7 +109,7 @@ $address     = ($data['address']['address'] == '') ?  '' : $data['address']['add
                             <textarea name="address" class="form-control" id="exampleFormControlTextarea1" rows="3"><?php echo trim($address); ?></textarea>
                         </div>
 
-                        <div class="input-group-prepend be-addon">
+                        <div class="input-group-prepend be-addon" id="save-data">
                           <button tabindex="-1" type="submit" class="btn btn-secondary">
                             Simpan
                           </button>
@@ -128,6 +128,7 @@ $address     = ($data['address']['address'] == '') ?  '' : $data['address']['add
                 <ul class="list-unstyled">
                     <li><a href="#overview" class="active">Bio Toko</a></li>
                     <li><a href="#alamat-toko">Alamat Toko</a></li>
+                    <li><a href="#save-data">Simpan Data</a></li>
                     <li><a href="#top">Back to Top</a></li>
                 </ul>
             </div>

@@ -25,9 +25,21 @@ $route->post('/profile-edit', 'User\ProfileController@edit');
 
 $route->get('/product-stock', 'User\ProfileController@edit');
 
+# === Product
+# ====== Add
 $route->get('/product-add', 'Product\AddProductController@view');
 $route->post('/product-add', 'Product\AddProductController@add');
+# ====== End Add
 
-$route->get('/product-update', 'User\ProfileController@edit');
-$route->get('/product-delete', 'User\ProfileController@edit');
-$route->get('/product-search', 'User\ProfileController@edit');
+# ====== Search
+$route->get('/product', 'Product\SearchProductController@searchView');
+# ====== End Search
+
+# ====== Update
+$route->post('/product-update', 'User\ProfileController@edit');
+# ====== End Update
+
+# ====== Delete
+$route->post('/delete-product', 'Product\ProductController@remove');
+# ====== End Delete
+# ===

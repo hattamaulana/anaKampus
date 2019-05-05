@@ -14,13 +14,13 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header" id="top">
-                        <h2 class="pageheader-title">Tambah Produk Baru</h2>
+                        <h2 class="pageheader-title">Update Data Produk</h2>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                     <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Produk</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Update Produk</li>
                                 </ol>
                             </nav>
                         </div>
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="card">
-                        <h5 class="card-header">Produk Baru</h5>
+                        <h5 class="card-header">Data Produk</h5>
                         <div class="card-body">
                             <form method="post" action="/product-add" enctype="multipart/form-data">
                               <div class="form-group" id="photo-product">
@@ -52,11 +52,11 @@
                               </div>
 
                               <div class="form-group" id="kind-product">
-                                <label for="input-select">Category Produk</label>
-                                <select class="form-control" id="input-select" name="category" value="sticker">
-                                    <option value="STICKER">Sticker</option>
-                                    <option value="T-SHIRT">Kaos</option>
-                                    <option value="HOODIE">Hoodie</option>
+                                <label for="input-select">Jenis Produk</label>
+                                <select class="form-control" id="input-select" name="type" value="sticker">
+                                    <option value="sticker">Sticker</option>
+                                    <option value="kaos">Kaos</option>
+                                    <option value="hoodie">Hoodie</option>
                                 </select>
                               </div>
                                 
@@ -95,12 +95,7 @@
 
                                 <div class="form-group" id="description-product">
                                     <label for="exampleFormControlTextarea1">Deskripsi Produk</label>
-                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                  <label for="inputText4" class="col-form-label">Stock</label>
-                                  <input id="inputText4" type="number" class="form-control" placeholder="Stock yang disediakan" name="stock">
+                                    <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
 
                                 <div class="form-group" id="save-data">

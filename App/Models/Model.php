@@ -30,9 +30,9 @@ class Model {
 
   public function get($row = '', $where = '') {
     $row    = ($row === '') ? '*' : $row;
-    $where  = ($where === '') ? '' : $where;
-    $query  = "SELECT $row FROM " .$this->table. " WHERE $where ";
-    // echo $query;
+    $where  = ($where === '') ? '' : ' WHERE '. $where;
+    $query  = "SELECT $row FROM " .$this->table. " $where ";
+    // echo $query; die();
 
     return self::$mysqli->query($query);
   }
@@ -50,6 +50,8 @@ class Model {
       $query = "DELETE FROM $this->table WHERE $condition";
     else
       $query = "DELETE FROM $this->table";
+
+    print($query);
 
     return self::$mysqli->query($query);
   }
@@ -70,7 +72,7 @@ class Model {
 
     $table = ($table == '') ? $this->table : $table;
     $query = "INSERT INTO $table ( $keys ) VALUES ( $vals )";
-    // echo $query;
+    echo $query;
 
     return self::$mysqli->query($query);
   }

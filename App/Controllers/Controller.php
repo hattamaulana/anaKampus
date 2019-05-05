@@ -19,4 +19,9 @@ class Controller {
 
     return $result;
   }
+
+  protected function getInputManually($req, $string) {
+    if(isset($req[$string]))
+      return $req[$string];
+  }
 }

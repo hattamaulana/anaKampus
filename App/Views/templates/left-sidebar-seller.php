@@ -35,21 +35,21 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/product-stock">Stok Produk</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/product-search">Cari Produk</a>
+                            </li>
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="/product-add">Tambah Produk</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/product-update">Update Produk</a>
+                                <a class="nav-link" href="/product">Update Produk</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/product-delete">Hapus Produk</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="/product-search">Cari Produk</a>
+                                <a class="nav-link" href="/product">Hapus Produk</a>
                             </li>
                         </ul>
                     </div>
