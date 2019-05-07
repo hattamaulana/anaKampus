@@ -17,7 +17,6 @@ class ProductController extends Controller {
       
     $product = new Product();
     $params  = $product->show();
-    
 
     parent::show('product/edit-products', $params);
   }
@@ -43,6 +42,19 @@ class ProductController extends Controller {
     $data_product = [ Product::$NAME , Product::$CATEGORY , Product::$PRICE , Product::$DESCRIPTION ];
     $data_product = parent::getInput($req, $data_product);
     $pid          = parent::getInput($req, [Product::$PID])[Product::$PID];
+    $photo_uri    = "Storage/Product/$pid-";
+    $photo        = parent::getInputManually($_FILES, 'photo');
+
+    if(! $photo['error'] == 4) {
+      if($photo['type'] == 'image/jpeg' || $photo['type'] == 'image/jpg' || $photo['type'] == 'image/png') {
+        $photo_uri = $photo_uri. basename($data_product[Product::$NAME]);
+        if(move_uploaded_file($photo['tmp_name'], __DIR__."/../../../".$photo_uri))
+          $photo = true;
+      }
+    }
+    
+    if($photo === True)
+      $data_product[Product::$PHOTO] = $photo_uri;
     
     if($product->saveUpdate($data_product, $pid))
       header('Location: /edit-product');

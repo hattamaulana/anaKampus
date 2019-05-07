@@ -1,7 +1,3 @@
-<?php
-# Testing Code
-// die(print_r($data)); ?>
-
 <?php require_once __DIR__.'/../templates/header-seller.php' ?>
 <?php require_once __DIR__.'/../templates/left-sidebar-seller.php' ?>
 
@@ -28,8 +24,6 @@
                 </div>
             </div>
             <!-- end pageheader  -->
-            <!-- ============================================================== -->
-
             <!-- ============================================================== -->
             <!-- basic form  -->
             <div class="row">
@@ -96,11 +90,6 @@
                                 <div class="form-group" id="description-product">
                                     <label for="exampleFormControlTextarea1">Deskripsi Produk</label>
                                     <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                  <label for="inputText4" class="col-form-label">Stock</label>
-                                  <input id="inputText4" type="number" class="form-control" placeholder="Stock yang disediakan" name="stock">
                                 </div>
 
                                 <div class="form-group" id="save-data">

@@ -52,7 +52,9 @@
                           <tr>
                             <td> <?php echo $i; ?> </td>
                             <td>
-                              <div class="m-r-10"><img src="App/Views/templates/assets/seller/images/product-pic.jpg" alt="user" class="rounded" width="45" height="45"></div>
+                              <div class="m-r-10">
+                                <img src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg' : $value['photo']; ?>" alt="user" class="rounded" width="45" height="45">
+                              </div>
                             </td>
                             <td> <?php echo $value['pid'] ?> </td>
                             <td> <?php echo $value['name'] ?> </td>

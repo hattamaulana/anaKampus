@@ -59,14 +59,14 @@
         <div class="col col1">
           <div class="f_p_item">
             <div class="f_p_img">
-              <img class="img-fluid" src="App/Views/templates/assets/img/product/feature-product/f-p-1.jpg" alt="">
+              <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
                 <a href="#">
                   <i class="lnr lnr-cart"></i>
                 </a>
               </div>
             </div>
-            <a href="#">
+            <a href="/detail-product?p=<?php echo $value['pid']; ?>">
               <h4> <?php echo $value['name']; ?> </h4>
             </a>
             <h5> Rp <?php echo $value['price']; ?>,00 </h5>
@@ -94,9 +94,6 @@
         <div id="mc_embed_signup">
           <form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01" method="get" class="subscription relative">
             <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Email'" required="">
-            <!-- <div style="position: absolute; left: -5000px;">
-                <input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
-              </div> -->
             <button type="submit" class="newsl-btn">Mulai</button>
             <div class="info"></div>
           </form>

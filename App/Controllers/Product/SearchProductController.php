@@ -15,7 +15,6 @@ class SearchProductController extends Controller {
       
     $product = new Product();
     $params  = $product->show();
-    
 
     parent::show('product/products', $params);
   }

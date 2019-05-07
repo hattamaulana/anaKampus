@@ -39,6 +39,7 @@
                         <div class="card-body">
                             <form method="post" action="/product-update" enctype="multipart/form-data">
                               <input type="hidden" name="pid" value="<?php echo $data['pid'] ?>">
+                              
                               <div class="form-group" id="photo-product">
                                 <label>Photo Produk</label>
                                 <div class="custom-file mb-3">

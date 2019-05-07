@@ -42,7 +42,7 @@
         <div class="col-lg-3 col-md-3 col-sm-6">
           <div class="f_p_item">
             <div class="f_p_img">
-              <img class="img-fluid" src="App/Views/templates/assets/img/product/feature-product/f-p-1.jpg" alt="">
+              <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
                 <a href="/detail-product?p=<?php echo $value['pid']; ?>">
                   <i class="lnr lnr-cart"></i>

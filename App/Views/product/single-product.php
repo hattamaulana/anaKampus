@@ -24,26 +24,9 @@
       <div class="col-lg-6">
         <div class="s_product_img">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
-                <img src="App/Views/templates/assets/img/product/single-product/s-product-s-2.jpg" alt="">
-              </li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1">
-                <img src="App/Views/templates/assets/img/product/single-product/s-product-s-3.jpg" alt="">
-              </li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2">
-                <img src="App/Views/templates/assets/img/product/single-product/s-product-s-4.jpg" alt="">
-              </li>
-            </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="App/Views/templates/assets/img/product/single-product/s-product-1.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="App/Views/templates/assets/img/product/single-product/s-product-1.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="App/Views/templates/assets/img/product/single-product/s-product-1.jpg" alt="Third slide">
+                <img class="d-block w-75" src="<?php echo ($data['photo'] == null) ? 'Storage/Product/default.jpg': $data['photo'] ?>">
               </div>
             </div>
           </div>
