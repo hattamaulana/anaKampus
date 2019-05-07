@@ -37,7 +37,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="/product-search">Cari Produk</a>
+                                <a class="nav-link" href="/search-product">Cari Produk</a>
                             </li>
                             
                             <li class="nav-item">
@@ -45,11 +45,11 @@
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/product">Update Produk</a>
+                                <a class="nav-link" href="/edit-product">Update Produk</a>
                             </li>
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="/product">Hapus Produk</a>
+                                <a class="nav-link" href="/delete-product">Hapus Produk</a>
                             </li>
                         </ul>
                     </div>

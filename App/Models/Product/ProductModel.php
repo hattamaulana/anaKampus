@@ -22,16 +22,40 @@ class ProductModel extends Model {
     $this->model->table = 'product';
   }
 
+  public function saveUpdate($data = [], $pid) {
+    return $this->model->update($data, self::$PID. "='$pid'");
+  }
+
   public function add($data) {
     return $this->model->insert($data);
   }
 
+  public function showWithLimit($limit) {
+    $return = [];
+    $result = $this->model->get('*', '', '', $limit);
+    while($data = $result->fetch_assoc()) 
+      array_push($return, $data);
+    
+    return $return;
+  }
+
   public function show() {
-    $result = $this->model->get();
+    $clause = self::$UID. "='". $_SESSION[self::$UID] ."'";
+    $result = $this->model->get('*', $clause);
     $return = [];
     while($data = $result->fetch_assoc()) 
       array_push($return, $data);
     
+    return $return;
+  }
+
+  public function find($row, $clause) {
+    $key = array_keys($clause)[0];
+    $result = $this->model->get($row, $key."='". $clause[$key] ."'");
+    $return = [];
+    while($data = $result->fetch_assoc())
+      array_push($return, $data);
+
     return $return;
   }
 

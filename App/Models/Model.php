@@ -28,10 +28,12 @@ class Model {
     self::$mysqli = new MySQLI($HOST, $USER, $PASS, $NAME);
   }
 
-  public function get($row = '', $where = '') {
+  public function get($row = '', $where = '', $order = '', $limit = '') {
     $row    = ($row === '') ? '*' : $row;
     $where  = ($where === '') ? '' : ' WHERE '. $where;
-    $query  = "SELECT $row FROM " .$this->table. " $where ";
+    $order  = ($order === '') ? '' : ' ORDER BY '. $order;
+    $limit  = ($limit === '') ? '' : ' LIMIT '. $limit;
+    $query  = "SELECT $row FROM " .$this->table. " $where $limit";
     // echo $query; die();
 
     return self::$mysqli->query($query);
@@ -72,7 +74,7 @@ class Model {
 
     $table = ($table == '') ? $this->table : $table;
     $query = "INSERT INTO $table ( $keys ) VALUES ( $vals )";
-    echo $query;
+    // echo $query;
 
     return self::$mysqli->query($query);
   }

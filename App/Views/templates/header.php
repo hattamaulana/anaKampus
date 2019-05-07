@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="App/Views/templates/assets/img/favicon.png" type="image/png">
-	<title>Fashiop</title>
+	<title>AnaKampus</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="App/Views/templates/assets/css/bootstrap.css">
@@ -35,8 +35,8 @@
 				<div class="float-right">
 					<ul class="right_side">
 						<li>
-							<a href="/login">
-								Login/Register
+							<a href="/register">
+								Register
 							</a>
 						</li>
 						<li>
@@ -59,7 +59,7 @@
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="/">
-						<img src="App/Views/templates/assets/img/logo.png" alt="">
+						<img src="App/Views/templates/assets/img/favicon.png" alt="">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -74,47 +74,12 @@
 								<ul class="nav navbar-nav center_nav pull-right">
 									<li class="nav-item active">
 										<a class="nav-link" href="/">Home</a>
-									</li>
-									<li class="nav-item submenu dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
-										<ul class="dropdown-menu">
-											<li class="nav-item">
-												<a class="nav-link" href="category.html">Shop Category</a>
-												<li class="nav-item">
-													<a class="nav-link" href="single-product.html">Product Details</a>
-													<li class="nav-item">
-														<a class="nav-link" href="checkout.html">Product Checkout</a>
-														<li class="nav-item">
-															<a class="nav-link" href="cart.html">Shopping Cart</a>
-														</li>
-														<li class="nav-item">
-															<a class="nav-link" href="confirmation.html">Confirmation</a>
-														</li>
-										</ul>
-									</li>
-									<li class="nav-item submenu dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-										<ul class="dropdown-menu">
-											<li class="nav-item">
-												<a class="nav-link" href="blog.html">Blog</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link" href="single-blog.html">Blog Details</a>
-											</li>
-										</ul>
-									</li>
-									<li class="nav-item submenu dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-										<ul class="dropdown-menu">
-											<li class="nav-item">
-												<a class="nav-link" href="login.html">Login</a>
-												<li class="nav-item">
-													<a class="nav-link" href="tracking.html">Tracking</a>
-													<li class="nav-item">
-														<a class="nav-link" href="elements.html">Elements</a>
-													</li>
-										</ul>
-									</li>
+                  </li>
+                  
+									<li class="nav-item">
+										<a class="nav-link" href="/show-category">shop</a>
+                  </li>
+
 									<li class="nav-item">
 										<a class="nav-link" href="contact.html">Contact</a>
 									</li>
@@ -125,35 +90,17 @@
 								<ul class="nav navbar-nav navbar-right right_nav pull-right">
 									<hr>
 									<li class="nav-item">
-										<a href="#" class="icons">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</a>
-									</li>
-
-									<hr>
-
-									<li class="nav-item">
 										<a href="/profile" class="icons">
 											<i class="fa fa-user" aria-hidden="true"></i>
 										</a>
 									</li>
 
 									<hr>
-
-									<li class="nav-item">
-										<a href="#" class="icons">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-
-									<hr>
-
 									<li class="nav-item">
 										<a href="#" class="icons">
 											<i class="lnr lnr lnr-cart"></i>
 										</a>
 									</li>
-
 									<hr>
 								</ul>
 							</div>

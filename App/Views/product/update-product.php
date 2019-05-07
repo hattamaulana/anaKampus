@@ -1,6 +1,6 @@
 <?php
 # Testing Code
-// die(print_r($data)); ?>
+// die(print_r echo($data)); ?>
 
 <?php require_once __DIR__.'/../templates/header-seller.php' ?>
 <?php require_once __DIR__.'/../templates/left-sidebar-seller.php' ?>
@@ -37,7 +37,8 @@
                     <div class="card">
                         <h5 class="card-header">Data Produk</h5>
                         <div class="card-body">
-                            <form method="post" action="/product-add" enctype="multipart/form-data">
+                            <form method="post" action="/product-update" enctype="multipart/form-data">
+                              <input type="hidden" name="pid" value="<?php echo $data['pid'] ?>">
                               <div class="form-group" id="photo-product">
                                 <label>Photo Produk</label>
                                 <div class="custom-file mb-3">
@@ -48,12 +49,12 @@
 
                               <div class="form-group" id="name-product">
                                 <label for="inputText3" class="col-form-label">Nama Produk</label>
-                                <input id="inputText3" name="name" type="text" class="form-control" placeholder="Nama">
+                                <input id="inputText3" name="name" type="text" class="form-control" placeholder="Nama" value="<?php echo $data['name'] ?>">
                               </div>
 
                               <div class="form-group" id="kind-product">
                                 <label for="input-select">Jenis Produk</label>
-                                <select class="form-control" id="input-select" name="type" value="sticker">
+                                <select class="form-control" id="input-select" name="category" value="<?php echo $data['category'] ?>">
                                     <option value="sticker">Sticker</option>
                                     <option value="kaos">Kaos</option>
                                     <option value="hoodie">Hoodie</option>
@@ -69,33 +70,13 @@
                                       </span>
                                     </span>
                                     
-                                    <input type="text" name="price" class="form-control">
+                                    <input type="text" name="price" class="form-control" value="<?php echo $data['price'] ?>">
                                   </div>
-                                </div>
-
-                                <div class="form-group" id="size-product">
-                                  <h5> Ukuran yang disediakan </h5>
-
-                                  <label class="custom-control custom-checkbox custom-control-inline">
-                                    <input type="checkbox" value="XXL" name="size[]" class="custom-control-input"><span class="custom-control-label">XXL</span>
-                                  </label>
-
-                                  <label class="custom-control custom-checkbox custom-control-inline">
-                                    <input type="checkbox" name="size[]" value="XL"class="custom-control-input"><span class="custom-control-label">XL</span>
-                                  </label>
-
-                                  <label class="custom-control custom-checkbox custom-control-inline">
-                                    <input type="checkbox" name="size[]" value="L" class="custom-control-input"><span class="custom-control-label">L</span>
-                                  </label>
-
-                                  <label class="custom-control custom-checkbox custom-control-inline">
-                                    <input type="checkbox" name="size[]" value="M" class="custom-control-input"><span class="custom-control-label">M</span>
-                                  </label>
                                 </div>
 
                                 <div class="form-group" id="description-product">
                                     <label for="exampleFormControlTextarea1">Deskripsi Produk</label>
-                                    <textarea class="form-control" name="deskripsi" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"><?php echo $data['description'] ?></textarea>
                                 </div>
 
                                 <div class="form-group" id="save-data">

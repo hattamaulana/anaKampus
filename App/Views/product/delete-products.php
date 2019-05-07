@@ -44,6 +44,7 @@
                               <th class="border-0">Nama Product</th>
                               <th class="border-0">Jenis Product</th> 
                               <th class="border-0">Harga Product</th>
+                              <th class="border-0"></th>
                             </tr>
                           </thead>
                         <tbody>
@@ -52,12 +53,20 @@
                           <tr>
                             <td> <?php echo $i; ?> </td>
                             <td>
-                              <div class="m-r-10"><img src="App/Views/templates/assets/seller/images/test.jpg" alt="user" class="rounded" width="45" height="45"></div>
+                              <div class="m-r-10"><img src="App/Views/templates/assets/seller/images/product-pic.jpg" alt="user" class="rounded" width="45" height="45"></div>
                             </td>
                             <td> <?php echo $value['pid'] ?> </td>
                             <td> <?php echo $value['name'] ?> </td>
                             <td> <?php echo $value['category'] ?> </td>
                             <td> <?php echo $value['price'] ?> </td>
+                            <td>
+                              <form action="/delete-product" method="post">
+                                <input type="hidden" name="pid" value="<?php echo $value['pid'] ?> ">
+                                <button tabindex="-1" type="submit" class="btn btn-secondary">
+                                  HAPUS
+                                </button>
+                              </form>
+                            </td>
                             <!-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> -->
                           </tr>
                           <?php $i++; } ?>
