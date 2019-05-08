@@ -44,7 +44,7 @@
             <div class="f_p_img">
               <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
-                <a href="/detail-product?p=<?php echo $value['pid']; ?>">
+                <a href="/add-cart?p=<?php echo $value['pid']; ?>">
                   <i class="lnr lnr-cart"></i>
                 </a>
               </div>
@@ -152,9 +152,6 @@
           method="get" class="subscription relative">
           <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
             required="">
-          <!-- <div style="position: absolute; left: -5000px;">
-              <input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
-            </div> -->
           <button type="submit" class="newsl-btn">Get Started</button>
           <div class="info"></div>
         </form>

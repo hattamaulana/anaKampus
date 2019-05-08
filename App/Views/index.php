@@ -61,7 +61,7 @@
             <div class="f_p_img">
               <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
-                <a href="#">
+                <a href="/add-cart?<?php echo $value['pid']; ?>">
                   <i class="lnr lnr-cart"></i>
                 </a>
               </div>

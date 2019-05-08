@@ -41,3 +41,5 @@ $route->post('/delete-product', 'Product\ProductController@remove');
 $route->get('/show-category', 'Product\ShowProductController@viewCategory');
 $route->get('/detail-product', 'Product\ShowProductController@viewDetail');
 # =====
+$route->get('/cart', 'Cart\CartController@view');
+$route->get('/add-cart', 'Cart\CartController@add');

@@ -17,6 +17,10 @@ class Session {
     session_destroy();
   }
 
+  public function getData($key) {
+    return $_SESSION[$key];
+  }
+
   public function get($key) {
     return $_SESSION[$key[0]];
   }
