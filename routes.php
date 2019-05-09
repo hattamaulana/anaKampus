@@ -43,3 +43,6 @@ $route->get('/detail-product', 'Product\ShowProductController@viewDetail');
 # =====
 $route->get('/cart', 'Cart\CartController@view');
 $route->get('/add-cart', 'Cart\CartController@add');
+$route->get('/remove-cart', 'Cart\CartController@delete');
+# ======
+$route->get('/pay', 'Transaction\PayController@index');

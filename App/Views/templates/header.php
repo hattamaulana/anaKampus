@@ -34,21 +34,19 @@
 				</div>
 				<div class="float-right">
 					<ul class="right_side">
+						<?php if(isset($_SESSION['uid'])) { ?>
 						<li>
+							<a href="/logout">
+								Logout
+							</a>
+						</li>
+            <?php } else { ?>
+            <li>
 							<a href="/register">
 								Register
 							</a>
 						</li>
-						<li>
-							<a href="/login">
-								My Account
-							</a>
-						</li>
-						<li>
-							<a href="contact.html">
-								Contact Us
-							</a>
-						</li>
+            <?php } ?>
 					</ul>
 				</div>
 			</div>

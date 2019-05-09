@@ -10,7 +10,6 @@ use App\Models\Product\StockModel as Stock;
 use App\Models\Product\ProductModel as Product;
 
 class DeleteProductController extends Controller {
-
   public function view(){
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))

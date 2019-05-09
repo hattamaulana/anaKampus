@@ -8,9 +8,8 @@ class Session {
   }
 
   public function add($args = []) {
-    foreach ($args as $key => $value) {
+    foreach ($args as $key => $value)
       $_SESSION[$key] = $value;
-    }
   }
 
   public function destroy() {

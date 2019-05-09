@@ -47,4 +47,18 @@ class CartController extends Controller {
 
     header('Location: /show-category');
   }
+
+  public function delete($req) {
+    $pid = parent::getInputManually($_GET, 'p');
+    $sesi = new Session();
+    $param = [];
+    $product = new Product();
+
+    foreach ($sesi->getData(Product::$PID) as $cart)
+      if($cart != $pid)
+        array_push($param, $cart);
+
+    $sesi->add([Product::$PID => array_unique($param)]);
+    header('Location: /cart');
+  }
 }

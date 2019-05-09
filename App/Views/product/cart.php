@@ -29,6 +29,7 @@
               <th scope="col">Harga</th>
               <th scope="col">Banyak Belanjaan</th>
               <th scope="col">Total Belanja</th>
+              <th scope="col">Hapus</th>
             </tr>
           </thead>
           <tbody>
@@ -63,6 +64,9 @@
               <td>
                 <h5>$000.00</h5>
               </td>
+              <td>
+                <a class="main_btn" href="/remove-cart?p=<?php echo $value['pid']; ?>"> Batal </a>
+              </td>
             </tr>
             <?php   } ?>
 
@@ -82,10 +86,12 @@
               <td></td>
               <td></td>
               <td>
-                <div class="checkout_btn_inner">
-                  <a class="gray_btn" href="/show-category">Lanjutkan Belanja</a>
-                  <a class="main_btn" href="#">Lanjut ke Kasir</a>
-                </div>
+                <form action="/pay" method="POST">
+                  <div class="checkout_btn_inner">
+                    <a class="gray_btn" href="/show-category">Lanjutkan Belanja</a>
+                    <button class="main_btn" type="submit"> Bayar Sekarang </button>
+                  </div>
+                </form>
               </td>
             </tr>
           </tbody>
