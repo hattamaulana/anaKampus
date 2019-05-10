@@ -1,5 +1,5 @@
 <!--================ start footer Area  =================-->
-	<footer class="footer-area">
+	<footer class="footer-area section_gap">
 		<div class="container">
 				<p class="col-lg-12 footer-text text-center">
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -26,7 +26,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="App/Views/templates/assets/vendors/flipclock/timer.js"></script>
 	<script src="App/Views/templates/assets/vendors/counter-up/jquery.counterup.js"></script>
 	<script src="App/Views/templates/assets/js/mail-script.js"></script>
-	<script src="App/Views/templates/assets/js/theme.js"></script>
+  <script src="App/Views/templates/assets/js/theme.js"></script>
 </body>
 
 </html>

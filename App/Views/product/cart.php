@@ -1,24 +1,7 @@
-<?php 
-?>
 <?php require_once __DIR__. '/../templates/header.php'; ?>
-<!--================Home Banner Area =================-->
-<section class="banner_area">
-  <div class="banner_inner d-flex align-items-center">
-    <div class="container">
-      <div class="banner_content text-center">
-        <h2>Shopping Cart</h2>
-        <div class="page_link">
-          <a href="index.html">Home</a>
-          <a href="cart.html">Cart</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--================End Home Banner Area =================-->
 
 <!--================Cart Area =================-->
-<section class="cart_area">
+<section class="cart_area" style="margin-top: 100px">
   <div class="container">
     <div class="cart_inner">
       <div class="table-responsive">

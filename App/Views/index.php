@@ -6,10 +6,9 @@
     <div class="container">
       <div class="banner_content row">
         <div class="offset-lg-2 col-lg-8">
-          <h3>Fashion
-            <br />Mahasiswa</h3>
+          <h3>Fashion Mahasiswa</h3>
           <p>
-            Berpenampilanlah sebaik mungkin untuk menunjukkan bahwa anda mempunyai jatidiri yang berintelektual dengan gaya jaman now.
+            Berpenampilanlah sebaik mungkin untuk menunjukkan <br> bahwa anda mempunyai jatidiri yang berintelektual dengan gaya jaman now.
           </p>
           <a class="white_bg_btn" href="#">Lihat Koleksi</a>
         </div>
@@ -49,8 +48,8 @@
     <div class="container-fluid">
       <div class="row">
         <div class="main_title">
-          <h2>Featured Products</h2>
-          <p>Who are in extremely love with eco friendly system.</p>
+          <h2>Trending Produk</h2>
+          <p> Produk yang sedang Trending </p>
         </div>
       </div>
       <div class="row">
@@ -61,7 +60,7 @@
             <div class="f_p_img">
               <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
-                <a href="/add-cart?<?php echo $value['pid']; ?>">
+                <a href="/add-cart?p=<?php echo $value['pid']; ?>">
                   <i class="lnr lnr-cart"></i>
                 </a>
               </div>
@@ -73,31 +72,6 @@
           </div>
         </div>
       <?php } ?>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="subscription-area section_gap">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="section-title text-center">
-          <h2>Ayo, Ikuti kami</h2>
-          <span>Kami akan mengirimkan info product yang baru dan trending</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-lg-6">
-        <div id="mc_embed_signup">
-          <form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01" method="get" class="subscription relative">
-            <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Alamat Email'" required="">
-            <button type="submit" class="newsl-btn">Mulai</button>
-            <div class="info"></div>
-          </form>
-        </div>
       </div>
     </div>
   </div>

@@ -4,6 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="App/Views/templates/assets/img/favicon.png" type="image/png">
+	<title>AnaKampus</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="App/Views/templates/assets/seller/vendor/bootstrap/css/bootstrap.min.css">

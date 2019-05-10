@@ -12,4 +12,8 @@ class HomeView extends Controller {
     
     parent::show('index', $params);
   }
+
+  public function contact() {
+    parent::show('contact');
+  }
 }

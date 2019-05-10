@@ -1,24 +1,8 @@
 <?php # die(print_r($data)); ?>
 <?php require_once __DIR__. '/../templates/header.php' ?>
-<!--================Home Banner Area =================-->
-<section class="banner_area">
-  <div class="banner_inner d-flex align-items-center">
-    <div class="container">
-      <div class="banner_content text-center">
-        <h2>Single Product Page</h2>
-        <div class="page_link">
-          <a href="/">Home</a>
-          <a href="show-category">Category</a>
-          <a href="#">Product Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--================End Home Banner Area =================-->
 
 <!--================Single Product Area =================-->
-<div class="product_image_area">
+<div class="product_image_area" style="margin-top: 100px">
   <div class="container">
     <div class="row s_product_inner">
       <div class="col-lg-6">

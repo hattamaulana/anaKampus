@@ -17,14 +17,19 @@ class ProfileController extends Controller {
 
     $uid  = $sesi->get([Auth::$uid]);
     if(self::isSeller($uid)){
-      $user = new Auth();
-      $shop = $user->print( Auth::$uid, $sesi->get([Auth::$uid]) );
-      unset($shop['password']);
-      
-      $data['shop'] = $shop;
-      parent::show('seller/profile', $data);
+      $address = new Address();
+      $uid     = $sesi->get([Auth::$uid]);
+
+      if(self::isSeller($uid)) {
+        $seller = new Seller();
+        $data['bio']     = $seller->print($uid);
+        $data['address'] = $address->print($uid);
+      }
+
+      $data['bio'][Auth::$email] = $sesi->get([Auth::$email]);
+      parent::show('seller/profil', $data);
     } else 
-      parent::show('index');
+      parent::show('buyer/edit-profile');
   }
 
   public function editView() {

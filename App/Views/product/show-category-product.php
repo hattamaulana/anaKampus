@@ -1,23 +1,7 @@
 <?php # die(print_r($data)) ?>
 <?php require_once __DIR__. '/../templates/header.php'; ?>
-<!--================Home Banner Area =================-->
-<section class="banner_area">
-<div class="banner_inner d-flex align-items-center">
-  <div class="container">
-    <div class="banner_content text-center">
-      <h2>Shop Category Page</h2>
-      <div class="page_link">
-        <a href="index.html">Home</a>
-        <a href="category.html">Shop</a>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-<!--================End Home Banner Area =================-->
-
 <!--================Category Product Area =================-->
-<section class="cat_product_area section_gap">
+<section class="cat_product_area section_gap" style="margin-top: 100px">
 <div class="container-fluid">
   <div class="row flex-row-reverse">
     <div class="col-lg-9">
@@ -132,33 +116,5 @@
   </div>
 </div>
 </section>
-<!--================End Category Product Area =================-->
 
-<!--================ Subscription Area ================-->
-<section class="subscription-area section_gap">
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-8">
-      <div class="section-title text-center">
-        <h2>Subscribe for Our Newsletter</h2>
-        <span>We won’t send any kind of spam</span>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-lg-6">
-      <div id="mc_embed_signup">
-        <form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01"
-          method="get" class="subscription relative">
-          <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'"
-            required="">
-          <button type="submit" class="newsl-btn">Get Started</button>
-          <div class="info"></div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-<!--================ End Subscription Area ================-->
 <?php require_once __DIR__. '/../templates/footer.php'; ?>

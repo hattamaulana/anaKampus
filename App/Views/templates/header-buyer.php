@@ -20,8 +20,15 @@
 
 	<!-- main css -->
 	<link rel="stylesheet" href="App/Views/templates/assets/css/style.css">
-	<link rel="stylesheet" href="App/Views/templates/assets/css/responsive.css">
+  <link rel="stylesheet" href="App/Views/templates/assets/css/responsive.css">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="App/Views/templates/assets/seller/vendor/bootstrap/css/bootstrap.min.css">
+  <link href="App/Views/templates/assets/seller/vendor/fonts/circular-std/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="App/Views/templates/assets/seller/libs/css/style.css">
+  <link rel="stylesheet" href="App/Views/templates/assets/seller/vendor/fonts/fontawesome/css/fontawesome-all.css">
 </head>
+
 <body>
 
 	<!--================Header Menu Area =================-->
@@ -54,16 +61,17 @@
 		<div class="main_menu">
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="/">
 						<img src="App/Views/templates/assets/img/favicon.png" alt="">
 					</a>
-
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
 
+					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<div class="row w-100">
 							<div class="col-lg-7 pr-0">
@@ -106,3 +114,5 @@
 			</nav>
 		</div>
   </header>
+  
+	<!--================Header Menu Area =================-->
