@@ -6,6 +6,7 @@ use App\Router\Request;
 $route = new Router(new Request());
 $route->get('/404', 'ErrorView@view404');
 $route->get('/', 'HomeView@view');
+$route->get('/contact', 'HomeView@contact');
 
 # === Authentication Route
 # ====== Login
@@ -45,4 +46,5 @@ $route->get('/cart', 'Cart\CartController@view');
 $route->get('/add-cart', 'Cart\CartController@add');
 $route->get('/remove-cart', 'Cart\CartController@delete');
 # ======
-$route->get('/pay', 'Transaction\PayController@index');
+$route->post('/pay', 'Transaction\PayController@add');
+$route->get('/pay-confirmation', 'Transaction\ConfirmationController@view');

@@ -32,12 +32,15 @@
               <th scope="col">Hapus</th>
             </tr>
           </thead>
+          <form action="/pay" method="post">
           <tbody>
+            <?php $i = 1; $totalBelanjaan = 0; ?>
             <?php foreach($data as $key => $value) { ?>
             <tr>
               <td>
                 <div class="media">
                   <div class="d-flex">
+                    <input type="hidden" name="pid[]" value="<?php echo $value['pid'] ?>">
                     <img width="100" height="100" src="<?php echo $value['photo']; ?>" alt="">
                   </div>
                   <div class="media-body">
@@ -46,29 +49,70 @@
                 </div>
               </td>
               <td>
-                <h5>Rp <?php echo $value['price'] ?> ,00</h5>
+                <h5>Rp <?php echo $value['price'] ?></h5>
               </td>
               <td>
                 <div class="product_count">
-                  <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
-                  <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                    class="increase items-count" type="button">
+                  <input type="text" name="qty" id="sst-<?php echo $i; ?>" maxlength="12" value="1" title="Quantity:" class="input-text qty">
+                  <button onclick="
+                  var banyakbeli = document.getElementById('banyak-beli-<?php echo $i; ?>');
+                  var pembayaran = document.getElementById('nominal-pembayaran');
+                  var totalbeli = document.getElementById('total-beli-<?php echo $i; ?>'); 
+                  var result = document.getElementById('sst-<?php echo $i; ?>'); 
+                  var sst = result.value; 
+                  if( !isNaN( sst )) {
+                    result.value++;
+                    harga = parseInt(<?php echo $value['price']; ?>);
+                    totalp = pembayaran.textContent;
+                    totalp = totalp.substring(3, totalp.length);
+                    totalp = parseInt(totalp);
+                    total = harga * result.value;
+                    bayar = totalp + harga;
+                    totalbeli.innerText = 'Rp '+ total;
+                    pembayaran.innerText = 'Rp '+ bayar;
+                    banyakbeli.innerText = result.value;
+                  }
+
+                  return false; " class="increase items-count" type="button">
                     <i class="lnr lnr-chevron-up"></i>
                   </button>
-                  <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                    class="reduced items-count" type="button">
+                  <button onclick="
+                  var banyakbeli = document.getElementById('banyak-beli-<?php echo $i; ?>');
+                  var pembayaran = document.getElementById('nominal-pembayaran');
+                  var totalbeli = document.getElementById('total-beli-<?php echo $i; ?>');
+                  var result = document.getElementById('sst-<?php echo $i; ?>'); 
+                  var sst = result.value; 
+                  if( !isNaN( sst ) &amp;&amp; sst > 1 ) {
+                    result.value--;
+                    totalb = totalbeli.textContent;
+                    totalp = pembayaran.textContent;
+                    totalb = totalb.substring(3, totalb.length);
+                    totalp = totalp.substring(3, totalp.length);
+                    totalb = parseInt(totalb);
+                    totalp = parseInt(totalp);
+                    harga = parseInt(<?php echo $value['price']; ?>);
+                    total = totalb - harga;
+                    bayar = totalp - harga;
+                    totalbeli.innerText = 'Rp '+ total;
+                    pembayaran.innerText = 'Rp '+ bayar;
+                    banyakbeli.innerText = result.value;
+                  }
+
+                  return false; " class="reduced items-count" type="button">
                     <i class="lnr lnr-chevron-down"></i>
+                    <input type="hidden" name="jumlahpembelian[]" id="banyak-beli-<?php echo $i; ?>" value="1">
                   </button>
                 </div>
               </td>
               <td>
-                <h5>$000.00</h5>
+                <h5 id="total-beli-<?php echo $i; ?>">Rp <?php echo $value['price'] ?></h5>
               </td>
               <td>
                 <a class="main_btn" href="/remove-cart?p=<?php echo $value['pid']; ?>"> Batal </a>
               </td>
             </tr>
-            <?php   } ?>
+            <?php $totalBelanjaan += $value['price']; ?>
+            <?php $i++;  }  ?>
 
             <tr>
               <td></td>
@@ -77,7 +121,7 @@
                 <h5>Total Semua Belanjaan</h5>
               </td>
               <td>
-                <h5>Rp ,00</h5>
+                <h5 id="nominal-pembayaran">Rp <?php echo $totalBelanjaan ?></h5>
               </td>
             </tr>
             
@@ -86,15 +130,15 @@
               <td></td>
               <td></td>
               <td>
-                <form action="/pay" method="POST">
-                  <div class="checkout_btn_inner">
-                    <a class="gray_btn" href="/show-category">Lanjutkan Belanja</a>
-                    <button class="main_btn" type="submit"> Bayar Sekarang </button>
-                  </div>
-                </form>
+                <div class="checkout_btn_inner">
+                  <input type="hidden" id="nominal-pembayaran" name="pembayaran" value="<?php echo $totalBelanjaan; ?>">
+                  <a class="gray_btn" href="/show-category">Lanjutkan Belanja</a>
+                  <button class="main_btn" type="submit"> Bayar Sekarang </button>
+                </div>
               </td>
             </tr>
           </tbody>
+          <form>
         </table>
       </div>
     </div>
