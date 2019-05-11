@@ -27,9 +27,9 @@ class ProfileController extends Controller {
       }
 
       $data['bio'][Auth::$email] = $sesi->get([Auth::$email]);
-      parent::show('seller/profil', $data);
+      parent::show('seller/profile', $data);
     } else 
-      parent::show('buyer/edit-profile');
+      parent::show('buyer/profile');
   }
 
   public function editView() {
