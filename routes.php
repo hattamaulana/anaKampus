@@ -50,3 +50,5 @@ $route->get('/remove-cart', 'Cart\CartController@delete');
 # ======
 $route->post('/pay', 'Transaction\PayController@add');
 $route->get('/pay-confirmation', 'Transaction\ConfirmationController@view');
+# ======
+$route->get('/history', 'Transaction\HistoryController@view');

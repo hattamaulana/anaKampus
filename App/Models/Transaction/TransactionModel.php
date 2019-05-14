@@ -34,4 +34,14 @@ class TransactionModel extends Model {
 
     return  $this->db->execute($query)->fetch_assoc();
   }
+
+  public function show($uid) {
+    $clause = self::$UID. "='$uid'";
+    $result = $this->db->get('*', $clause);
+    $return = [];
+    while($data = $result->fetch_assoc()) 
+      array_push($return, $data);
+    
+    return $return;
+  }
 }
