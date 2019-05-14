@@ -105,4 +105,8 @@ class Model {
 
     return $result;
   }
+
+  protected function execute(string $query) {
+    return self::$mysqli->query($query);
+  }
 }

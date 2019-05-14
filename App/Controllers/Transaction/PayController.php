@@ -42,7 +42,7 @@ class PayController extends Controller {
         $insert_status = false;
 
     if($insert_status)
-      header('Location: /confirm');
+      header('Location: /pay-confirmation?t='. $tid);
   }
 
   private static function getTransactionId() {

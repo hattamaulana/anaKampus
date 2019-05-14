@@ -12,18 +12,26 @@ class TransactionModel extends Model {
   public static $UPDATED_AT = 'updated_at';
   public $TABLE = 'transactions';
 
-  private $model;
+  private $db;
   private $last_id;
   public function __construct() {
-    $this->model = parent::getInstance();
-    $this->model->table = $this->TABLE;
+    $this->db = parent::getInstance();
+    $this->db->table = $this->TABLE;
   }
 
   public function create($args = []) {
-    return $this->model->insert($args);
+    return $this->db->insert($args);
   }
 
   public function getLastId($arg) {
-    return $this->model->insert_id($arg);
+    return $this->db->insert_id($arg);
+  }
+
+  public function join($table, $constrain, $where = '') {
+    $where_clause = ($where === '') ? '' : ' WHERE '. $where;
+
+    $query = "SELECT *  from ". $this->db->table. " inner join $table on ". $this->db->table. ".uid=$table.$constrain" . $where_clause;
+
+    return  $this->db->execute($query)->fetch_assoc();
   }
 }

@@ -1,6 +1,4 @@
 <?php require_once __DIR__. '/../templates/header.php'; ?>
-
-<!--================Cart Area =================-->
 <section class="cart_area" style="margin-top: 100px">
   <div class="container">
     <div class="cart_inner">
@@ -40,6 +38,7 @@
                   <button onclick="
                   var banyakbeli = document.getElementById('banyak-beli-<?php echo $i; ?>');
                   var pembayaran = document.getElementById('nominal-pembayaran');
+                  var tanggbayar = document.getElementById('tanggungan-pembayaran');
                   var totalbeli = document.getElementById('total-beli-<?php echo $i; ?>'); 
                   var result = document.getElementById('sst-<?php echo $i; ?>'); 
                   var sst = result.value; 
@@ -53,7 +52,8 @@
                     bayar = totalp + harga;
                     totalbeli.innerText = 'Rp '+ total;
                     pembayaran.innerText = 'Rp '+ bayar;
-                    banyakbeli.innerText = result.value;
+                    tanggbayar.value = bayar;
+                    banyakbeli.value = result.value;
                   }
 
                   return false; " class="increase items-count" type="button">
@@ -62,6 +62,7 @@
                   <button onclick="
                   var banyakbeli = document.getElementById('banyak-beli-<?php echo $i; ?>');
                   var pembayaran = document.getElementById('nominal-pembayaran');
+                  var tanggbayar = document.getElementById('tanggungan-pembayaran');
                   var totalbeli = document.getElementById('total-beli-<?php echo $i; ?>');
                   var result = document.getElementById('sst-<?php echo $i; ?>'); 
                   var sst = result.value; 
@@ -78,7 +79,8 @@
                     bayar = totalp - harga;
                     totalbeli.innerText = 'Rp '+ total;
                     pembayaran.innerText = 'Rp '+ bayar;
-                    banyakbeli.innerText = result.value;
+                    tanggbayar.value = bayar;
+                    banyakbeli.value = result.value;
                   }
 
                   return false; " class="reduced items-count" type="button">
@@ -114,7 +116,7 @@
               <td></td>
               <td>
                 <div class="checkout_btn_inner">
-                  <input type="hidden" id="nominal-pembayaran" name="pembayaran" value="<?php echo $totalBelanjaan; ?>">
+                  <input type="hidden" id="tanggungan-pembayaran" name="pembayaran" value="<?php echo $totalBelanjaan; ?>">
                   <a class="gray_btn" href="/show-category">Lanjutkan Belanja</a>
                   <button class="main_btn" type="submit"> Bayar Sekarang </button>
                 </div>

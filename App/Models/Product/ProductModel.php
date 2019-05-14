@@ -5,6 +5,7 @@ namespace App\Models\Product;
 use App\Models\Model;
 
 class ProductModel extends Model {
+  public static $TABLE       = 'product';
   public static $UID         = 'uid';
   public static $PID         = 'pid';
   public static $PHOTO       = 'photo';
@@ -19,7 +20,7 @@ class ProductModel extends Model {
   private $model;
   public function __construct() {
     $this->model        = parent::getInstance();
-    $this->model->table = 'product';
+    $this->model->table = self::$TABLE;
   }
 
   public function saveUpdate($data = [], $pid) {

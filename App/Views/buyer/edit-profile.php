@@ -22,7 +22,7 @@ require_once __DIR__. '/../templates/header.php'; ?>
         <div class="row">
           <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7">
             <div class="card">
-              <h5 class="card-header">Data Diri <p align="right">Edit</p></h5>
+              <h5 class="card-header">Data Diri</h5>
 
               <div class="card-body">
                 <form method="post" action="/profile-edit-buyer">

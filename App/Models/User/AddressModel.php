@@ -8,6 +8,7 @@ use App\Models\Session;
 class AddressModel extends Model {
   private $model;
 
+  public static $TABLE    = 'addresses';
   public static $AID      = 'aid';
   public static $STREET   = 'street';
   public static $ZIPCODE  = 'zipcode';
@@ -17,7 +18,7 @@ class AddressModel extends Model {
 
   public function __construct() {
     $this->model        = parent::getInstance();
-    $this->model->table = 'addresses';
+    $this->model->table = self::$TABLE;
   }
 
   public function print($aid) {
