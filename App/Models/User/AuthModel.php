@@ -69,6 +69,19 @@ class AuthModel extends Model {
     return $return;
   }
 
+  public function changePassword($uid, $password) {
+    $where = self::$uid. "='$uid'";
+    $data = $this->model->get('', $where)->fetch_assoc();
+
+    if(password_verify($password['old_password'], $data['password'])) {
+        $new_password = $this->model->hashPassword($password['new_password']);
+        $update = [ self::$password => $new_password ];
+
+        return $this->model->update($update, $where);
+    } else 
+        return false;
+  }
+
   private function getEmail($param) {
     $result = $this->model->get('', $param);
 

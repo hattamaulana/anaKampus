@@ -42,7 +42,7 @@ class Model {
   public function update($paramData = array(), $condition) {
     $updated = $this->buildStringForUpdate($paramData);
     $query = "UPDATE $this->table SET $updated WHERE $condition";
-    // echo $query;
+    // echo $query; die();
 
     return self::$mysqli->query($query);
   }

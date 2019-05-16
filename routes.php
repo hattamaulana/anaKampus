@@ -20,9 +20,10 @@ $route->get('/logout', 'Auth\SignInController@logout');
 # === Profile Route
 $route->get('/profile', 'User\ProfileController@view');
 $route->get('/profile-edit', 'User\ProfileController@editView');
+$route->get('/change-password', 'User\ProfileController@changePassword');
+$route->post('/change-password', 'User\ProfileController@modifyPassword');
 $route->post('/profile-edit', 'User\ProfileController@edit');
 $route->post('/profile-edit-buyer', 'User\ProfileController@editBuyer');
-
 
 $route->get('/product-stock', 'User\ProfileController@edit');
 # === Product

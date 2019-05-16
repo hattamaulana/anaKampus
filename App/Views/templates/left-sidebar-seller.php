@@ -12,19 +12,24 @@
                     Menu Dashboard
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Profil<span class="badge badge-success">6</span></a>
+                    <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Profile<span class="badge badge-success">6</span></a>
                     <div id="submenu-1" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                           <li class="nav-item">
-                              <a class="nav-link" href="/profile">Tampilkan Profil</a>
+                            <a class="nav-link" href="/profile">Profile</a>
                           </li>
 
                           <li class="nav-item">
-                                <a class="nav-link" href="/profile-edit">Edit Profil</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/logout">Logout</a>
-                            </li>
+                            <a class="nav-link" href="/profile-edit">Edit Profil</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="/change-password">Ganti Password</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                          </li>
                         </ul>
                     </div>
                 </li>
@@ -34,7 +39,7 @@
                     <div id="submenu-2" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="/product-stock">Stok Produk</a>
+                                <a class="nav-link" href="/#">Stok Produk</a>
                             </li>
 
                             <li class="nav-item">

@@ -131,6 +131,32 @@ class ProfileController extends Controller {
       header('Location: /profile-edit');
   }
 
+  public function changePassword() {
+    parent::show('auth/change_password');
+  }
+
+  public function modifyPassword($req) {
+    $input = parent::getInput($req, ['old_password', 'new_password', 'verify_password']);
+
+    if($input['new_password'] == $input['verify_password']) {
+      $auth = new Auth();
+      $session = new Session();
+
+      unset($input['verify_password']);
+      $uid = $session->get([Auth::$uid]);
+      if($auth->changePassword($uid, $input))
+        $data = ['message' => "Berhasil Ganti Password"];
+      else
+        $data = ['message' => "Maaf, Password Lama Salah"];
+    } else {
+        $data = ['message' => "Password tidak sesuai"];
+        $data['error'] = ['new_password' => 'Password Baru Tidak Match'];
+        $data['error'] = ['verify_password' => 'Password Baru Tidak Match'];
+    }
+    
+    parent::show('auth/change_password', $data);
+  }
+
   private static function isSeller($uid) {
     return $uid{0} === 'S';
   }
