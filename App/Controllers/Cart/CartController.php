@@ -45,7 +45,7 @@ class CartController extends Controller {
     } else
         $sesi->add([Product::$PID => [$new_cart]]);
 
-    header('Location: /show-category');
+    header('Location: /cart');
   }
 
   public function delete($req) {

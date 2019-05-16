@@ -20,10 +20,7 @@ class Model {
   }
 
   private function __construct () {
-    $HOST = "localhost";
-    $USER = "root";
-    $PASS = "nganu";
-    $NAME = "anakampus";
+    require_once __DIR__. '/../../.env.php';
 
     self::$mysqli = new MySQLI($HOST, $USER, $PASS, $NAME);
   }
