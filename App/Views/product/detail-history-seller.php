@@ -6,12 +6,13 @@
       <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
               <div class="page-header">
-                  <h2 class="pageheader-title"> History </h2>
+                  <h2 class="pageheader-title"> Detail History </h2>
                   <div class="page-breadcrumb">
                       <nav aria-label="breadcrumb">
                           <ol class="breadcrumb">
                               <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                               <li class="breadcrumb-item active" aria-current="page">History</li>
+                              <li class="breadcrumb-item active" aria-current="page">Detail</li>
                           </ol>
                       </nav>
                   </div>
@@ -30,9 +31,10 @@
                           <thead class="bg-light">
                             <tr class="border-0">
                               <th class="border-0">No.</th>
-                              <th class="border-0">Id Transaksi</th>
-                              <th class="border-0">Tanggal Orderan</th>
-                              <th class="border-0">Detail Orderan</th>
+                              <th class="border-0">Photo Produk</th>
+                              <th class="border-0">Nama Produk</th>
+                              <th class="border-0">Banyak Pembelian</th>
+                              <th class="border-0">Total</th>
                             </tr>
                           </thead>
                         <tbody>
@@ -40,11 +42,12 @@
                           <?php foreach ($data as $key => $value) {  ?>
                           <tr>
                             <td> <?php echo $i; ?> </td>
-                            <td> <?php echo $value['tid'] ?> </td>
-                            <td> <?php echo $value['created_at'] ?> </td>
                             <td>
-                              <a href="/histories?t=<?php echo $value['tid'] ?>">Tampilkan</a>
+                              <div class="m-r-10"><img src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="user" class="rounded" width="45" height="45"></div>
                             </td>
+                            <td> <?php echo $value['name'] ?> </td>
+                            <td> <?php echo $value['banyak_pembelian'] ?> </td>
+                            <td> <?php echo ($value['price'] * $value['banyak_pembelian']) ?> </td>
                             <!-- <td><span class="badge-dot badge-brand mr-1"></span>InTransit </td> -->
                           </tr>
                           <?php $i++; } ?>

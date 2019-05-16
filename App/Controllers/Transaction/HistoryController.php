@@ -5,6 +5,7 @@ namespace App\Controllers\Transaction;
 use App\Models\Session;
 use App\Controllers\Controller;
 use App\Models\User\AuthModel as Auth;
+use App\Models\Product\ProductModel as Product;
 use App\Models\Transaction\TransactionModel as Transaction;
 use App\Models\Transaction\DetailTransactionModel as DetailTransaction;
 
@@ -34,6 +35,16 @@ class HistoryController extends Controller {
       $params = $transaction->show($session->get([Transaction::$UID]));
       parent::show('product/history', $params);
     }
+  }
+
+  public function detail() {
+    $tid = parent::getInputManually($_GET, 't');
+    $detail_transaction = new DetailTransaction();
+
+    $param_where = $detail_transaction->TABLE. ".". DetailTransaction::$TID. "='$tid'";
+    $data = $detail_transaction->join(Product::$TABLE, Product::$PID, $param_where);
+
+    parent::show('product/detail-history-seller', $data);
   }
 
   private static function isSeller($uid) {

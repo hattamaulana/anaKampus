@@ -52,3 +52,4 @@ $route->post('/pay', 'Transaction\PayController@add');
 $route->get('/pay-confirmation', 'Transaction\ConfirmationController@view');
 # ======
 $route->get('/history', 'Transaction\HistoryController@view');
+$route->get('/histories', 'Transaction\HistoryController@detail');

@@ -43,14 +43,13 @@ class DetailTransactionModel extends Model {
   public function join($table, $constrain, $where = '', $group_by = '', $order_by = '', $asc_desc = '') {
     $group_by = ($group_by === '') ? '' : ' GROUP BY '. $group_by;
     $order_by = ($order_by === '') ? '' : ' ORDER BY '. $order_by;
-    $asc_desc = ($asc_desc === '') ? '' : ($asc_desc == 'ASC') ? ' ASC ' : ' DESC ';
+    $asc_desc = ($asc_desc === 'ASC') ? ' ASC ' : ($asc_desc === 'DESC') ? ' ASC ' : '';
     $where_clause = ($where === '') ? '' : ' WHERE '. $where;
 
     $query = "SELECT *  from ". $this->db->table. " inner join $table on ". $this->db->table. ".$constrain=$table.$constrain" . $where_clause. $group_by. $order_by. $asc_desc;
 
     $return = [];
     $result = $this->db->execute($query);
-    
     while($data = $result->fetch_assoc())
       array_push($return, $data);
 
