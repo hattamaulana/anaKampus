@@ -1,0 +1,6 @@
+Storage/
+Storage/Product/*
+Storage/Profile/*
+vendor/
+ENV.php
+database.sql

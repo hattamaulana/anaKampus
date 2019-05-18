@@ -51,12 +51,8 @@ class ProductModel extends Model {
   }
 
   public function paginate($where = '') {
-    $result = $this->model->get('count(*) as b', $where);
-    $return = [];
-    while($data = $result->fetch_assoc()) 
-      array_push($return, $data);
-    
-    return $return;
+    $result = $this->model->get('*', $where);
+    return $result->num_rows;
   }
 
   public function find($row, $clause) {

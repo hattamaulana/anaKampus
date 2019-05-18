@@ -57,7 +57,7 @@
                                 <label for="input-select">Jenis Produk</label>
                                 <select class="form-control" id="input-select" name="category" value="<?php echo $data['category'] ?>">
                                     <option value="sticker">Sticker</option>
-                                    <option value="kaos">Kaos</option>
+                                    <option value="t-shirt">Kaos</option>
                                     <option value="hoodie">Hoodie</option>
                                 </select>
                               </div>

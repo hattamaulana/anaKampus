@@ -6,7 +6,7 @@
   <div class="row flex-row-reverse">
     <div class="col-lg-9">
       <div class="latest_product_inner row">
-        <?php foreach($data as $key => $value) { ?>
+        <?php foreach($data['data'] as $key => $value) { ?>
         <div class="col-lg-3 col-md-3 col-sm-6">
           <div class="f_p_item">
             <div class="f_p_img">
@@ -91,6 +91,30 @@
       </div>
     </div>
   </div>
+
+  <div class="row" style="margin-top: 100px">
+				<nav class="cat_page mx-auto" aria-label="Page navigation example">
+          <?php $paginate = ceil($data['paginate'] / 12); ?>
+          <?php $position = $data['position']; ?>
+					<ul class="pagination">
+						<li class="page-item">
+							<a class="page-link" href="<?php echo ($position == 1) ? '#' : '/show-category?p='. ($position - 1) ?>">
+								<i class="fa fa-chevron-left" aria-hidden="true"></i>
+							</a>
+            </li>
+            <?php for($i = 1; $i <= $paginate; $i++) { ?>
+						<li class="page-item <?php echo ($position == $i) ? 'active' : '' ?>">
+							<a class="page-link" href="<?php echo ($position == $i) ? '#' : '/show-category?p='.$i ?>"> <?php echo $i ?></a>
+            </li>
+            <?php } ?>
+						<li class="page-item">
+							<a class="page-link" href="<?php echo ($position == $paginate) ? '#' : '/show-category?p='.($position + 1) ?>">
+								<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 </div>
 </section>
 

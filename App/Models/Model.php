@@ -7,20 +7,17 @@ use \mysqli as MySQLI;
 class Model {
   public $table;
   private $instance = null;
-
   protected static $mysqli = null;
+
   protected function getInstance () {
-    if ($this->instance == null)
-      $instance = new Model();
+    if ($this->instance == null || self::$mysqli == null)
+      $this->instance = new Model();
     
-    if (self::$mysqli == null || self::$mysqli->connect_error)
-      die("Connection Failed");
-    
-      return $instance;
+      return $this->instance;
   }
 
   private function __construct () {
-    require_once __DIR__.'/../../.env.php';
+    include __DIR__.'/../../ENV.php';
 
     self::$mysqli = new MySQLI($HOST, $USER, $PASS, $NAME);
   }

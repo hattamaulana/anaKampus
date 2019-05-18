@@ -36,14 +36,14 @@ class ProfileController extends Controller {
 
   public static function editView() {
     $sesi = new Session();
-    $uid = $sesi->get([Auth::$uid]);
+    $uid  = $sesi->get([Auth::$uid]);
     $address = new Address();
-
     if(self::isSeller($uid)) {
        $seller = new Seller();
        $data['bio'] = $seller->print($uid);
        $data['address'] = $address->print($uid);
        $data['bio'][Auth::$email] = $sesi->get([Auth::$email]);
+       
        parent::show('seller/edit-profile', $data);
     } else {
       $buyer = new Buyer();
