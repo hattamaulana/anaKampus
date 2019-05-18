@@ -10,7 +10,7 @@ use App\Models\User\SellerModel as Seller;
 use App\Models\User\AddressModel as Address;
 
 class ProfileController extends Controller {
-  public function view() {
+  public static function view() {
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))
       header("Location: /login");
@@ -34,7 +34,7 @@ class ProfileController extends Controller {
     }
   }
 
-  public function editView() {
+  public static function editView() {
     $sesi = new Session();
     $uid = $sesi->get([Auth::$uid]);
     $address = new Address();
@@ -55,7 +55,7 @@ class ProfileController extends Controller {
     }
   }
 
-  public function edit($req) {
+  public static function edit($req) {
     $updated = true;
     $seller  = new Seller();
     $address = new Address();
@@ -93,7 +93,7 @@ class ProfileController extends Controller {
       header('Location: /profile-edit');
   }
 
-  public function editBuyer($req) {
+  public static function editBuyer($req) {
     $updated = TRUE;
     $address = new Address();
     $session = new Session();
@@ -131,11 +131,11 @@ class ProfileController extends Controller {
       header('Location: /profile-edit');
   }
 
-  public function changePassword() {
+  public static function changePassword() {
     parent::show('auth/change_password');
   }
 
-  public function modifyPassword($req) {
+  public static function modifyPassword($req) {
     $input = parent::getInput($req, ['old_password', 'new_password', 'verify_password']);
 
     if($input['new_password'] == $input['verify_password']) {

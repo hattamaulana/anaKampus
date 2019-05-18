@@ -10,7 +10,7 @@ use App\Models\Transaction\TransactionModel as Transaction;
 use App\Models\Transaction\DetailTransactionModel as DetailTransaction;
 
 class ConfirmationController extends Controller {
-  public function view() {
+  public static function view() {
     $tid = parent::getInputManually($_GET, 't');
     $transaction = new Transaction();
     $detail_transaction = new DetailTransaction();

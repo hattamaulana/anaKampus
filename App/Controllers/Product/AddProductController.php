@@ -11,11 +11,11 @@ use App\Models\Product\StockModel as Stock;
 use App\Models\Product\ProductModel as Product;
 
 class AddProductController extends Controller {
-  public function view() {
+  public static function view() {
     parent::show('product/add-product');
   }
 
-  public function add($req) {
+  public static function add($req) {
     $product = new Product();
     $size    = new Size();
     $stock   = new Stock();

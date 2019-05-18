@@ -10,7 +10,7 @@ use App\Models\Transaction\TransactionModel as Transaction;
 use App\Models\Transaction\DetailTransactionModel as DetailTransaction;
 
 class HistoryController extends Controller {
-  public function view() {
+  public static function view() {
     $session = new Session();
     if(! $session->isExists(Transaction::$UID))
       header('Location: /login');
@@ -37,7 +37,7 @@ class HistoryController extends Controller {
     }
   }
 
-  public function detail() {
+  public static function detail() {
     $tid = parent::getInputManually($_GET, 't');
     $detail_transaction = new DetailTransaction();
 

@@ -10,7 +10,7 @@
           <p>
             Berpenampilanlah sebaik mungkin untuk menunjukkan <br> bahwa anda mempunyai jatidiri yang berintelektual dengan gaya jaman now.
           </p>
-          <a class="white_bg_btn" href="#">Lihat Koleksi</a>
+          <a class="white_bg_btn" href="/show-category">Lihat Koleksi</a>
         </div>
       </div>
     </div>
@@ -52,6 +52,7 @@
           <p> Produk yang sedang Trending </p>
         </div>
       </div>
+
       <div class="row">
       <?php $i = 1; ?>
       <?php foreach ($data as $key => $value) { ?>

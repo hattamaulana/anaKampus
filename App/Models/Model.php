@@ -20,7 +20,7 @@ class Model {
   }
 
   private function __construct () {
-    require_once __DIR__. '/../../.env.php';
+    require_once __DIR__.'/../../.env.php';
 
     self::$mysqli = new MySQLI($HOST, $USER, $PASS, $NAME);
   }
@@ -30,7 +30,7 @@ class Model {
     $where  = ($where === '') ? '' : ' WHERE '. $where;
     $order  = ($order === '') ? '' : ' ORDER BY '. $order;
     $limit  = ($limit === '') ? '' : ' LIMIT '. $limit;
-    $query  = "SELECT $row FROM " .$this->table. " $where $limit";
+    $query  = "SELECT $row FROM " .$this->table. " $where $order $limit";
     // echo $query; die();
 
     return self::$mysqli->query($query);

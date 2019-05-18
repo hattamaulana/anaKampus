@@ -7,11 +7,11 @@ use App\Models\User\AuthModel;
 use App\Controllers\Controller;
 
 class SignInController extends Controller {
-  public function view() {
+  public static function view() {
     parent::show('auth/signIn');
   }
 
-  public function signIn($req) {
+  public static function signIn($req) {
     $sesi = new Session();
     $user = new AuthModel();
     $data = $req->getBody();
@@ -32,7 +32,7 @@ class SignInController extends Controller {
     }
   }
 
-  public function logout() {
+  public static function logout() {
     $sesi = new Session();
     $sesi->destroy();
 
