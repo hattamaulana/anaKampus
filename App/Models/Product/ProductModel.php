@@ -31,10 +31,10 @@ class ProductModel extends Model {
     return $this->model->insert($data);
   }
 
-  public function showWithLimit($limit) {
+  public function showWithLimit($limit, $where = '', $order_by = '') {
     $return = [];
-    $result = $this->model->get('*', '', '', $limit);
-    while($data = $result->fetch_assoc()) 
+    $result = $this->model->get('*', $where, $order_by, $limit);
+    while($data = $result->fetch_assoc())
       array_push($return, $data);
     
     return $return;
@@ -43,6 +43,15 @@ class ProductModel extends Model {
   public function show() {
     $clause = self::$UID. "='". $_SESSION[self::$UID] ."'";
     $result = $this->model->get('*', $clause);
+    $return = [];
+    while($data = $result->fetch_assoc()) 
+      array_push($return, $data);
+    
+    return $return;
+  }
+
+  public function paginate($where = '') {
+    $result = $this->model->get('count(*) as b', $where);
     $return = [];
     while($data = $result->fetch_assoc()) 
       array_push($return, $data);

@@ -10,7 +10,7 @@ use App\Models\Product\StockModel as Stock;
 use App\Models\Product\ProductModel as Product;
 
 class DeleteProductController extends Controller {
-  public function view(){
+  public static function view(){
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))
       header("Location: /login");
@@ -21,7 +21,7 @@ class DeleteProductController extends Controller {
     parent::show('product/delete-products', $params);
   }
 
-  public function remove($req) {
+  public static function remove($req) {
     if(! $sesi->isExists(Auth::$uid))
       header("Location: /login");
 

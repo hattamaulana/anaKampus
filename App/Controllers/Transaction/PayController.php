@@ -9,7 +9,7 @@ use App\Models\Transaction\TransactionModel as Transaction;
 use App\Models\Transaction\DetailTransactionModel as DetailTransaction;
 
 class PayController extends Controller {
-  public function add($req) {
+  public static function add($req) {
     $pid = parent::getInputManually($_POST, 'pid');
     $total_bayar = parent::getInputManually($_POST, 'pembayaran');
     $jumlah_pembelian = parent::getInputManually($_POST, 'jumlahpembelian');

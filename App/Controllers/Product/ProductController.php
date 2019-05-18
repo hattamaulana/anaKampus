@@ -10,7 +10,7 @@ use App\Models\Product\StockModel as Stock;
 use App\Models\Product\ProductModel as Product;
 
 class ProductController extends Controller {
-  public function view() {
+  public static function view() {
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))
       header("Location: /login");
@@ -21,7 +21,7 @@ class ProductController extends Controller {
     parent::show('product/edit-products', $params);
   }
 
-  public function updateView($req) {
+  public static function updateView($req) {
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))
       header("Location: /login");
@@ -33,7 +33,7 @@ class ProductController extends Controller {
     parent::show('product/update-product', $params[0]);
   }
 
-  public function update($req) {
+  public static function update($req) {
     $product = new Product();
     $sesi = new Session();
     if(! $sesi->isExists(Auth::$uid))

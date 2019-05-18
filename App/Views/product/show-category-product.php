@@ -5,22 +5,6 @@
 <div class="container-fluid">
   <div class="row flex-row-reverse">
     <div class="col-lg-9">
-      <div class="product_top_bar">
-        <div class="left_dorp">
-          <select class="sorting">
-            <option value="1">Sorting Harga terendah</option>
-            <option value="2">Sorting Harga tertinggi</option>
-            <option value="4">Sorting Rating tertinggi</option>
-          </select>
-
-          <select class="show">
-            <option value="1"> Show 20 </option>
-            <option value="2"> Show 40 </option>
-            <option value="4"> Show 80 </option>
-          </select>
-        </div>
-      </div>
-
       <div class="latest_product_inner row">
         <?php foreach($data as $key => $value) { ?>
         <div class="col-lg-3 col-md-3 col-sm-6">
@@ -52,67 +36,60 @@
           <div class="widgets_inner">
             <ul class="list">
               <li>
-                <a href="#">Sticker</a>
+                <a href="/filter-category?c=sticker">Sticker</a>
               </li>
 
               <li>
-                <a href="#">T-Shirt</a>
+                <a href="/filter-category?c=t-shirt">T-Shirt</a>
               </li>
 
               <li>
-                <a href="#">Hoodie</a>
+                <a href="/filter-category?c=hoodie">Hoodie</a>
               </li>
             </ul>
           </div>
         </aside>
 
-        <aside class="left_widgets p_filter_widgets">
+        <aside class="left_widgets cat_widgets">
           <div class="l_w_title">
-            <h3>Product Filters</h3>
+            <h3>Filter Hasil</h3>
           </div>
+          
           <div class="widgets_inner">
-            <h4>Brand</h4>
-            <ul class="list">
-              <li>
-                <a href="#">Apple</a>
-              </li>
-            </ul>
+            <form action="/filter-set" method="get">
+              <ul class="list-group">
+                <li style="border: none; list-style: none; margin-bottom: 5px">
+                  <select class="show" name="category">
+                    <option value="STICKER"> STICKER </option>
+                    <option value="T-SHIRT"> T-SHIRT </option>
+                    <option value="HOODIE"> HOODIE </option>
+                  </select>
+                </li>
+
+                <li style="border: none; list-style: none; margin-bottom: 5px">
+                  <select class="sorting" name="sort">
+                    <option value="ASC">Sorting Harga terendah</option>
+                    <option value="DESC">Sorting Harga tertinggi</option>
+                  </select>
+                </li>
+
+                <li style="border: none; list-style: none; margin-bottom: 5px">
+                  <select class="show" name="limit">
+                    <option value="20"> Show 20 </option>
+                    <option value="40"> Show 40 </option>
+                    <option value="80"> Show 80 </option>
+                  </select>
+                </li>
+
+                <li style="border: none; list-style: none; margin-bottom: 5px">
+                  <button type="submit" class="btn btn-primary">Terapkan</button>
+                </li>
+              </ul>
+            </form>
           </div>
         </aside>
       </div>
     </div>
-  </div>
-
-  <div class="row" style="margin-top: 100px">
-    <nav class="cat_page mx-auto" aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-          </a>
-        </li>
-        <li class="page-item active">
-          <a class="page-link" href="#">01</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">02</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">03</a>
-        </li>
-        <li class="page-item blank">
-          <a class="page-link" href="#">...</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">09</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">
-            <i class="fa fa-chevron-right" aria-hidden="true"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
   </div>
 </div>
 </section>

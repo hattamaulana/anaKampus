@@ -7,7 +7,7 @@ use App\Controllers\Controller;
 use App\Models\Product\ProductModel as Product;
 
 class CartController extends Controller {
-  public function view() {
+  public static function view() {
     $sesi = new Session();
     $product = new Product();
     if(! $sesi->isExists('uid')) {
@@ -25,7 +25,7 @@ class CartController extends Controller {
     parent::show('product/cart', $params);
   }
 
-  public function add() {
+  public static function add() {
     $sesi = new Session();
     if(! $sesi->isExists('uid')) {
       header('Location: /login');
@@ -48,7 +48,7 @@ class CartController extends Controller {
     header('Location: /cart');
   }
 
-  public function delete($req) {
+  public static function delete($req) {
     $pid = parent::getInputManually($_GET, 'p');
     $sesi = new Session();
     $param = [];

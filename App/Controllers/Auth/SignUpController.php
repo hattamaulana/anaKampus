@@ -7,11 +7,11 @@ use App\Models\User\AuthModel;
 use App\Controllers\Controller;
 
 class SignUpController extends Controller {
-  public function view() {
+  public static function view() {
     parent::show('auth/signUp');
   }
 
-  public function signUp($req) {
+  public static function signUp($req) {
     $sesi = new Session();
     $user = new AuthModel();
     $data = $req->getBody();
