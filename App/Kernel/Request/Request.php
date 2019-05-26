@@ -1,21 +1,35 @@
-<?php
+<?php  namespace App\Kernel\Request;
 
-namespace App\Router;
+/*
+| -----------------------------
+| Request Proccessor
+| Directory App/Kernel/Request
+| -----------------------------
+*/
 
-use App\Router\Interfaces\RequestInterface;
+use App\Kernel\Request\Interfaces\RequestInterface;
 
-class Request implements RequestInterface {
-  public function __construct() {
+class Request implements RequestInterface 
+{
+  public function __construct() 
+  {
     $this->bootstrapSelf();
   }
 
-  private function bootstrapSelf() {
-    foreach($_SERVER as $key => $value) {
+  /**
+   * Copy All atribut in object Server
+   *  To became atribut for this object
+   */
+  private function bootstrapSelf() 
+  {
+    foreach($_SERVER as $key => $value) 
+    {
       $this->{$this->toCamelCase($key)} = $value;
     }
   }
   
-  private function toCamelCase($string) {
+  private function toCamelCase($string) 
+  {
     $result = strtolower($string);
         
     preg_match_all('/_[a-z]/', $result, $matches);
@@ -27,6 +41,11 @@ class Request implements RequestInterface {
     return $result;
   }
 
+  /**
+   * Get params Request
+   * 
+   * @return Assosiative_Array
+   */
   public function getBody() {
     if($this->requestMethod === "GET") {
       return;

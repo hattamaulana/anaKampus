@@ -1,21 +1,29 @@
-<?php
+<?php namespace App\Kernel;
 
-namespace App\Router;
+/*
+| -----------------------------
+| Route Loader
+| Directory App/Kernel/Router
+| -----------------------------
+*/
 
-use App\Router\Interfaces\RequestInterface;
+use App\Kernel\Request\Interfaces\RequestInterface;
 
-class Router {
+class Router 
+{
   private $request;
   private $supportedHttpMethods = array(
     "GET",
     "POST"
   );
 
-  function __construct(RequestInterface $request) {
+  function __construct(RequestInterface $request) 
+  {
    $this->request = $request;
   }
   
-  function __call($name, $args) {
+  function __call($name, $args) 
+  {
     list($route, $method) = $args;
     if(! in_array(strtoupper($name), $this->supportedHttpMethods)) 
       $this->invalidMethodHandler();
@@ -23,7 +31,13 @@ class Router {
     $this->{strtolower($name)}[$this->formatRoute($route)] = $method;
   }
   
-  private function formatRoute($route) {
+  /**
+   * Set Route Format
+   * 
+   * @return String
+   */
+  private function formatRoute($route) 
+  {
     $result = rtrim($route, '/');
     if ($result === '') {
       return '/';
@@ -32,15 +46,25 @@ class Router {
     return $result;
   }
 
-  private function invalidMethodHandler() {
+  /**
+   * Handle 405 Method Not Allowed Error
+   */
+  private function invalidMethodHandler() 
+  {
     header("{$this->request->serverProtocol} 405 Method Not Allowed");
   }
 
-  private function defaultRequestHandler() {
+  /**
+   * Handle 404 Not Found Error.
+   * Redirect To File >>> in Route /404
+   */
+  private function defaultRequestHandler() 
+  {
     header("Location: /404");
   }
   
-  function resolve() {
+  function resolve() 
+  {
     $methodDictionary = $this->{strtolower($this->request->requestMethod)};
     $formatedRoute = $this->formatRoute($this->request->requestUri);
     $formatedRoute = preg_split("/\?/", $formatedRoute);
@@ -58,7 +82,8 @@ class Router {
     call_user_func_array($method, array($this->request));
   }
 
-  function __destruct() {
+  function __destruct() 
+  {
     $this->resolve();
   }
 }
