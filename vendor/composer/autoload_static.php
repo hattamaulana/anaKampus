@@ -20,11 +20,45 @@ class ComposerStaticInitde25b0558c5e5063a553fbaa12a45129
         ),
     );
 
+    public static $classMap = array (
+        'App\\Controllers\\Auth\\SignInController' => __DIR__ . '/../..' . '/App/Controllers/Auth/SignInController.php',
+        'App\\Controllers\\Auth\\SignUpController' => __DIR__ . '/../..' . '/App/Controllers/Auth/SignUpController.php',
+        'App\\Controllers\\Cart\\CartController' => __DIR__ . '/../..' . '/App/Controllers/Cart/CartController.php',
+        'App\\Controllers\\Controller' => __DIR__ . '/../..' . '/App/Controllers/Controller.php',
+        'App\\Controllers\\HomeView' => __DIR__ . '/../..' . '/App/Controllers/HomeView.php',
+        'App\\Controllers\\Product\\AddProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/AddProductController.php',
+        'App\\Controllers\\Product\\DeleteProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/DeleteProductController.php',
+        'App\\Controllers\\Product\\ProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/ProductController.php',
+        'App\\Controllers\\Product\\SearchProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/SearchProductController.php',
+        'App\\Controllers\\Product\\ShowProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/ShowProductController.php',
+        'App\\Controllers\\Product\\SingleProductController' => __DIR__ . '/../..' . '/App/Controllers/Product/SingleProductController.php',
+        'App\\Controllers\\Transaction\\ConfirmationController' => __DIR__ . '/../..' . '/App/Controllers/Transaction/ConfirmationController.php',
+        'App\\Controllers\\Transaction\\HistoryController' => __DIR__ . '/../..' . '/App/Controllers/Transaction/HistoryController.php',
+        'App\\Controllers\\Transaction\\PayController' => __DIR__ . '/../..' . '/App/Controllers/Transaction/PayController.php',
+        'App\\Controllers\\User\\ProfileBuyerController' => __DIR__ . '/../..' . '/App/Controllers/User/ProfileBuyerController.php',
+        'App\\Controllers\\User\\ProfileController' => __DIR__ . '/../..' . '/App/Controllers/User/ProfileController.php',
+        'App\\Kernel\\Request\\Interfaces\\RequestInterface' => __DIR__ . '/../..' . '/App/Kernel/Request/Interfaces/RequestInterface.php',
+        'App\\Kernel\\Request\\Request' => __DIR__ . '/../..' . '/App/Kernel/Request/Request.php',
+        'App\\Kernel\\Router' => __DIR__ . '/../..' . '/App/Kernel/Router.php',
+        'App\\Models\\Model' => __DIR__ . '/../..' . '/App/Models/Model.php',
+        'App\\Models\\Product\\ProductModel' => __DIR__ . '/../..' . '/App/Models/Product/ProductModel.php',
+        'App\\Models\\Product\\SizeModel' => __DIR__ . '/../..' . '/App/Models/Product/SizeModel.php',
+        'App\\Models\\Product\\StockModel' => __DIR__ . '/../..' . '/App/Models/Product/StockModel.php',
+        'App\\Models\\Session' => __DIR__ . '/../..' . '/App/Models/Session.php',
+        'App\\Models\\Transaction\\DetailTransactionModel' => __DIR__ . '/../..' . '/App/Models/Transaction/DetailTransactionModel.php',
+        'App\\Models\\Transaction\\TransactionModel' => __DIR__ . '/../..' . '/App/Models/Transaction/TransactionModel.php',
+        'App\\Models\\User\\AddressModel' => __DIR__ . '/../..' . '/App/Models/User/AddressModel.php',
+        'App\\Models\\User\\AuthModel' => __DIR__ . '/../..' . '/App/Models/User/AuthModel.php',
+        'App\\Models\\User\\BuyerModel' => __DIR__ . '/../..' . '/App/Models/User/BuyerModel.php',
+        'App\\Models\\User\\SellerModel' => __DIR__ . '/../..' . '/App/Models/User/SellerModel.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitde25b0558c5e5063a553fbaa12a45129::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitde25b0558c5e5063a553fbaa12a45129::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitde25b0558c5e5063a553fbaa12a45129::$classMap;
 
         }, null, ClassLoader::class);
     }

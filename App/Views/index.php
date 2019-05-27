@@ -1,5 +1,4 @@
-<?php # die(print_r($data)); ?>
-<?php require_once 'templates/header.php' ?>
+<?php require_once 'layout/buyer/header.php' ?>
 <section class="home_banner_area">
   <div class="overlay"></div>
   <div class="banner_inner d-flex align-items-center">
@@ -77,4 +76,4 @@
     </div>
   </div>
 </section>
-<?php require_once 'templates/footer.php'; ?>
+<?php require_once 'layout/buyer/footer.php'; ?>

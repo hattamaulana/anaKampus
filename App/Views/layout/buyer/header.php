@@ -1,4 +1,5 @@
-<?php if(session_status() == PHP_SESSION_NONE) 
+<?php 
+if(session_status() == PHP_SESSION_NONE) 
     session_start(); ?>
 <!doctype html>
 <html lang="en">
@@ -7,22 +8,22 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href=" <?php echo asset('buyer/img/favicon.png') ?> " type="image/png">
+	<link rel="icon" href=" <?php echo $asset('buyer/img/favicon.png') ?> " type="image/png">
 	<title>AnaKampus</title>
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="<?php echo asset('buyer/css/bootstrap.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/linericon/style.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/css/font-awesome.min.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/owl-carousel/owl.carousel.min.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/lightbox/simpleLightbox.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/nice-select/css/nice-select.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/animate-css/animate.css') ?>">
-	<link rel="stylesheet" href="<?php echo asset('buyer/vendors/jquery-ui/jquery-ui.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/css/bootstrap.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/linericon/style.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/css/font-awesome.min.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/owl-carousel/owl.carousel.min.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/lightbox/simpleLightbox.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/nice-select/css/nice-select.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/animate-css/animate.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/vendors/jquery-ui/jquery-ui.css') ?>">
 
 	<!-- main css -->
-	<link rel="stylesheet" href="<?php echo asset('buyer/css/style.css') ?>">
-  <link rel="stylesheet" href="<?php echo asset('buyer/css/responsive.css') ?>">
+	<link rel="stylesheet" href="<?php echo $asset('buyer/css/style.css') ?>">
+  <link rel="stylesheet" href="<?php echo $asset('buyer/css/responsive.css') ?>">
 <body>
 
 	<!--================Header Menu Area =================-->
@@ -57,7 +58,7 @@
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="/">
-						<img src="<?php echo asset('buyer/img/favicon.png" alt="') ?>">
+						<img src="<?php echo $asset('buyer/img/favicon.png" alt="') ?>">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>

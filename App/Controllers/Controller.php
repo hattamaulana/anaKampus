@@ -6,6 +6,10 @@ class Controller {
   protected function show($view = '', $data = []) {
     $path = __DIR__. "/../Views/";
     
+    $asset = function(string $uri) {
+      return 'public/'. $uri;
+    };
+    
     require_once $path. $view. ".php";
   }
 

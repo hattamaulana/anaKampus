@@ -3,7 +3,6 @@
 use App\Kernel\Router;
 use App\Kernel\Request\Request;
 $route = new Router(new Request());
-
 /*
 |
 | Web Routes
@@ -33,27 +32,27 @@ $route = new Router(new Request());
 // Profile Route
   // Show UI
     $route->get('/profile', 'User\ProfileController@view');
-    $route->get('/profile-edit', 'User\ProfileController@editView');
+    $route->get('/profile/edit', 'User\ProfileController@editView');
     $route->get('/change-password', 'User\ProfileController@changePassword');
   // Process
-    $route->post('/profile-edit', 'User\ProfileController@edit');
-    $route->post('/profile-edit-buyer', 'User\ProfileController@editBuyer');
+    $route->post('/profile/edit', 'User\ProfileController@edit');
+    $route->post('/profile/edit-buyer', 'User\ProfileController@editBuyer');
     $route->post('/change-password', 'User\ProfileController@modifyPassword');
 // ~Profile
 
 // Product Route
   // Show UI
-    $route->get('/product-stock', 'User\ProfileController@edit');
-    $route->get('/product-add', 'Product\AddProductController@view');
-    $route->get('/search-product', 'Product\SearchProductController@searchView');
-    $route->get('/edit-product', 'Product\ProductController@view');
-    $route->get('/show-category', 'Product\ShowProductController@viewCategory');
-    $route->get('/filter-category', 'Product\ShowProductController@filterCategory');
+    $route->get('/product/stock', 'User\ProfileController@edit');
+    $route->get('/product/add', 'Product\AddProductController@view');
+    $route->get('/product/search', 'Product\SearchProductController@searchView');
+    $route->get('/product/edit', 'Product\ProductController@view');
+    $route->get('/product/category', 'Product\ShowProductController@viewCategory');
+    $route->get('/product/category/filter', 'Product\ShowProductController@filterCategory');
     $route->get('/filter-set', 'Product\ShowProductController@filterSet');
-    $route->get('/detail-product', 'Product\ShowProductController@viewDetail');
-    $route->get('/delete-product', 'Product\DeleteProductController@view');
+    $route->get('/product/detail', 'Product\ShowProductController@viewDetail');
+    $route->get('/product/delete', 'Product\DeleteProductController@view');
   // Process
-    $route->post('/product-add', 'Product\AddProductController@add');
+    $route->post('/product/add', 'Product\AddProductController@add');
     $route->post('/update-product', 'Product\ProductController@updateView');
     $route->post('/product-update', 'Product\ProductController@update');  
     $route->post('/search-product', 'Product\SearchProductController@searchView');

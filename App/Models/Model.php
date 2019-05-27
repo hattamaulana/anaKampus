@@ -17,7 +17,11 @@ class Model {
   }
 
   private function __construct () {
-    include __DIR__.'/../../ENV.php';
+    // include __DIR__.'/../../ENV.php';
+    $HOST = "localhost";
+    $USER = "root";
+    $PASS = "nganu";
+    $NAME = "anakampus";
 
     self::$mysqli = new MySQLI($HOST, $USER, $PASS, $NAME);
   }

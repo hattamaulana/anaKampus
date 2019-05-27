@@ -2,6 +2,7 @@ Storage/
 Storage/Product/*
 Storage/Profile/*
 vendor/
+.env
 ENV.php
 database.sql
 Todo

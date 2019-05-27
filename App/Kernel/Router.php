@@ -38,12 +38,11 @@ class Router
    */
   private function formatRoute($route) 
   {
-    $result = rtrim($route, '/');
-    if ($result === '') {
+    if (rtrim($route, '/') === '') {
       return '/';
     }
 
-    return $result;
+    return $route;
   }
 
   /**
@@ -60,15 +59,16 @@ class Router
    */
   private function defaultRequestHandler() 
   {
-    header("Location: /404");
+    // header("Location: /404");
+    header("{$this->request->serverProtocol} 404 Method Not Allowed");
   }
   
   function resolve() 
   {
     $methodDictionary = $this->{strtolower($this->request->requestMethod)};
     $formatedRoute = $this->formatRoute($this->request->requestUri);
-    $formatedRoute = preg_split("/\?/", $formatedRoute);
-    $formatedRoute = $formatedRoute[0];
+    // $formatedRoute = preg_split("/\:/", $formatedRoute);
+    // $formatedRoute = $formatedRoute[0];
 
     if(! array_key_exists($formatedRoute, $methodDictionary)) {
       $this->defaultRequestHandler();

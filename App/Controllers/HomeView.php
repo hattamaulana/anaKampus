@@ -6,7 +6,8 @@ use App\Controllers\Controller;
 use App\Models\Product\ProductModel as Product;
 
 class HomeView extends Controller {
-  public static function view() {
+  public static function view() 
+  {
     $product = new Product();
     $params  = $product->showWithLimit(10);
     

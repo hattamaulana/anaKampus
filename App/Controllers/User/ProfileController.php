@@ -35,6 +35,7 @@ class ProfileController extends Controller {
   }
 
   public static function editView() {
+    die();
     $sesi = new Session();
     $uid  = $sesi->get([Auth::$uid]);
     $address = new Address();

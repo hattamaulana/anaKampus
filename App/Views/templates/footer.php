@@ -12,21 +12,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="App/Views/templates/assets/js/jquery-3.2.1.min.js"></script>
-	<script src="App/Views/templates/assets/js/popper.js"></script>
-	<script src="App/Views/templates/assets/js/bootstrap.min.js"></script>
-	<script src="App/Views/templates/assets/js/stellar.js"></script>
-	<script src="App/Views/templates/assets/vendors/lightbox/simpleLightbox.min.js"></script>
-	<script src="App/Views/templates/assets/vendors/nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="App/Views/templates/assets/vendors/isotope/imagesloaded.pkgd.min.js"></script>
-	<script src="App/Views/templates/assets/vendors/isotope/isotope-min.js"></script>
-	<script src="App/Views/templates/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
-	<script src="App/Views/templates/assets/js/jquery.ajaxchimp.min.js"></script>
-	<script src="App/Views/templates/assets/vendors/counter-up/jquery.waypoints.min.js"></script>
-	<script src="App/Views/templates/assets/vendors/flipclock/timer.js"></script>
-	<script src="App/Views/templates/assets/vendors/counter-up/jquery.counterup.js"></script>
-	<script src="App/Views/templates/assets/js/mail-script.js"></script>
-	<script src="App/Views/templates/assets/js/theme.js"></script>
+	<script src="<?php echo asset('js/jquery-3.2.1.min.js') ?>"></script>
+	<script src="<?php echo asset('js/popper.js') ?>"></script>
+	<script src="<?php echo asset('js/bootstrap.min.js') ?>"></script>
+	<script src="<?php echo asset('js/stellar.js') ?>"></script>
+	<script src="<?php echo asset('vendors/lightbox/simpleLightbox.min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/nice-select/js/jquery.nice-select.min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/isotope/imagesloaded.pkgd.min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/isotope/isotope-min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/owl-carousel/owl.carousel.min.js') ?>"></script>
+	<script src="<?php echo asset('js/jquery.ajaxchimp.min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/counter-up/jquery.waypoints.min.js') ?>"></script>
+	<script src="<?php echo asset('vendors/flipclock/timer.js') ?>"></script>
+	<script src="<?php echo asset('vendors/counter-up/jquery.counterup.js') ?>"></script>
+	<script src="<?php echo asset('js/mail-script.js') ?>"></script>
+	<script src="<?php echo asset('js/theme.js') ?>"></script>
 </body>
 
 </html>
