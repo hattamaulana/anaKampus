@@ -1,7 +1,8 @@
 Storage/
-Storage/Product/*
-Storage/Profile/*
+Storage/
 vendor/
+.idea/
+
 .env
 ENV.php
 database.sql
