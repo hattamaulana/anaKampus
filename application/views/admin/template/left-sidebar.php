@@ -32,7 +32,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="dashboard-finance.html">
+                                    <a class="nav-link" href="<?= base_url(). 'auth/logout' ?>">
                                         Logout
                                     </a>
                                 </li>

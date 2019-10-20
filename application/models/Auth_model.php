@@ -43,4 +43,11 @@ class Auth_model extends CI_Model
             return false;
         }
     }
+
+    public function email_exist($email)
+    {
+        $result = $this->db->get_where(self::$TABLE, array('email' => $email));
+
+        return $result->result();
+    }
 }

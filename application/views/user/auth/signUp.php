@@ -13,35 +13,73 @@
       </div>
 
       <div class="col-lg-6">
-        <div class="login_form_inner reg_form">
-          <h3>Buat Akun Baru</h3>
+        <div class="login_form_inner">
+          <h1 class="mb-lg-5">REGISTER</h1>
           <form class="row login_form" id="contactForm"
                 action="<?php echo base_url(). 'Auth/register' ?>"
                 method="post"
                 novalidate="novalidate"
           >
-            <div class="col-md-12 form-group">
-              <input type="text" placeholder="Nama" class="form-control" id="name"
-                     name="<?= Auth_model::$NAME ?>">
-            </div>
+              <?php if (!form_error(Auth_model::$NAME)){ ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="text" class="form-control" placeholder="Nama"
+                             name="<?= Auth_model::$NAME ?>"
+                             value="<?= set_value(Auth_model::$NAME) ?>" >
+                  </div>
+              <?php } else { ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Nama"
+                             name="<?= Auth_model::$NAME ?>"
+                             value="<?= set_value(Auth_model::$NAME) ?>" >
+                      <div class="invalid-feedback" style="text-align: start">
+                          <?= form_error(Auth_model::$NAME) ?>
+                      </div>
+                  </div>
+              <?php } ?>
 
-            <div class="col-md-12 form-group">
-              <input type="email" placeholder="Alamat Email" class="form-control" id="email"
-                     name="<?= Auth_model::$EMAIL ?>">
-            </div>
+              <?php if (!form_error(Auth_model::$EMAIL)){ ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="email" class="form-control" placeholder="Email"
+                             name="<?= Auth_model::$EMAIL ?>"
+                             value="<?= set_value(Auth_model::$EMAIL) ?>" >
+                  </div>
+              <?php } else { ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Email"
+                             name="<?= Auth_model::$EMAIL ?>"
+                             value="<?= set_value(Auth_model::$EMAIL) ?>" >
+                      <div class="invalid-feedback" style="text-align: start">
+                          <?= form_error(Auth_model::$EMAIL) ?>
+                      </div>
+                  </div>
+              <?php } ?>
 
-            <div class="col-md-12 form-group">
-              <input type="password" placeholder="Password" class="form-control" id="password"
-                     name="<?= Auth_model::$PASSWORD ?>">
-            </div>
+              <?php if (!form_error(Auth_model::$PASSWORD)){ ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="password" class="form-control" id="password" placeholder="Password"
+                             name="<?= Auth_model::$PASSWORD ?>"
+                             value="<?= set_value(Auth_model::$PASSWORD) ?>" >
+                  </div>
+              <?php } else { ?>
+                  <div class="col-md-12 mb-3">
+                      <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Password"
+                             name="<?= Auth_model::$PASSWORD ?>"
+                             value="<?= set_value(Auth_model::$PASSWORD) ?>" >
+                      <div class="invalid-feedback" style="text-align: start">
+                          <?= form_error(Auth_model::$PASSWORD) ?>
+                      </div>
+                  </div>
+              <?php } ?>
 
-            <div class="col-md-12 form-group">
-              <div class="creat_account">
-                <input type="checkbox" id="f-option2"
-                       name="<?= Auth_model::$UID ?>"
-                       value="SELLER">
-                <label for="f-option2">Buat Akun Penjual</label>
-              </div>
+            <div class="col-md-12 mb-3">
+                <div class="custom-control custom-checkbox" style="text-align: start">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1"
+                           name="<?= Auth_model::$UID ?>"
+                           value="SELLER">
+                    <label class="custom-control-label" for="customCheck1">
+                        Buat Akun Sebagai Penjual
+                    </label>
+                </div>
             </div>
 
             <div class="col-md-12 form-group">
