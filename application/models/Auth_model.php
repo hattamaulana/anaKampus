@@ -23,11 +23,6 @@ class Auth_model extends CI_Model
             array(self::$EMAIL => $input[self::$EMAIL]),
             1);
 
-        $data = $data->result();
-        var_dump(password_verify($input[self::$PASSWORD], $data->self::$PASSWORD));
-
-        die();
-
         return $data->result();
     }
 

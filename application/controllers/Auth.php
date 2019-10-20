@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class Auth extends CI_Controller
+{
 
     public function __construct()
     {
@@ -30,7 +31,16 @@ class Auth extends CI_Controller {
     {
         $input = $this->input->post();
 
-        $this->auth_model->login($input);
+        $result = $this->auth_model->login($input);
+        if (password_verify($input[Auth_model::$PASSWORD], $result[0]->password)) {
+            $this->session->set_flashdata(Auth_model::$UID, $result[0]->uid);
+            $this->session->set_flashdata(Auth_model::$EMAIL, $result[0]->email);
+            redirect('user', 'refresh');
+        } else {
+            $this->load->view('user/template/header');
+            $this->load->view('user/auth/signIn');
+            $this->load->view('user/template/footer');
+        }
     }
 
     /**
