@@ -15,6 +15,16 @@ class Product_model extends CI_Model
     public static $CREATED_AT = 'created_at';
     public static $UPDATED_AT = 'updated_at';
 
+    public function get($uid)
+    {
+        $res = $this->db->get_where(self::$TABLE, array('uid' => $uid));
+
+        return $res->result_array();
+    }
+
+    /**
+     * @param array $input
+     */
     public function insert($input = array())
     {
         $this->db->insert(self::$TABLE, $input);

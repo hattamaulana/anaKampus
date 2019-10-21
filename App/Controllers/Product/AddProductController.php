@@ -28,7 +28,7 @@ class AddProductController extends Controller {
     $data_size  = parent::getInputManually($_POST, Size::$SIZE);
     $data_stock = $data_product[Stock::$STOCK];
     $photo      = parent::getInputManually($_FILES, 'photo');
-    $photo_uri  = "Storage/Product/$pid-". basename($data_product[Product::$NAME]);
+    $photo_uri  = "storage/product/$pid-". basename($data_product[Product::$NAME]);
 
     if(! $photo['error'] == 4)
       if($photo['type'] == 'image/jpeg' || $photo['type'] == 'image/jpg' || $photo['type'] == 'image/png')

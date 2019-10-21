@@ -23,7 +23,7 @@ class Admin extends CI_Controller
      */
     public function update()
     {
-        $config['upload_path']   = __DIR__. '/../../Storage/Profile/';
+        $config['upload_path']   = __DIR__ . '/../../storage/Profile/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size']      = 100;
         $config['max_width']     = 1024;
@@ -46,7 +46,7 @@ class Admin extends CI_Controller
                 Auth_model::$EMAIL => $input[Auth_model::$EMAIL],);
             $input_admin = array(
                 Seller_model::$UID => $this->session->userdata(Auth_model::$UID),
-                Seller_model::$LOGO_URI => $this->upload->data('full_path'),
+                Seller_model::$LOGO_URI => $this->upload->data('file_name'),
                 Seller_model::$NAME => $input[Seller_model::$NAME],
                 Seller_model::$PHONE_NUMBER => $input[Seller_model::$PHONE_NUMBER],
                 Seller_model::$DESCRIPTION => $input[Seller_model::$DESCRIPTION], );

@@ -10,7 +10,7 @@
         <div class="col-lg-3 col-md-3 col-sm-6">
           <div class="f_p_item">
             <div class="f_p_img">
-              <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg': $value['photo'] ?>" alt="">
+              <img class="img-fluid" src="<?php echo ($value['photo'] == null) ? 'storage/product/default.jpg': $value['photo'] ?>" alt="">
               <div class="p_icon">
                 <a href="/add-cart?p=<?php echo $value['pid']; ?>">
                   <i class="lnr lnr-cart"></i>

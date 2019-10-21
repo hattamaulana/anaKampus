@@ -53,7 +53,7 @@
                             <td> <?php echo $i; ?> </td>
                             <td>
                               <div class="m-r-10">
-                                <img src="<?php echo ($value['photo'] == null) ? 'Storage/Product/default.jpg' : $value['photo']; ?>" alt="user" class="rounded" width="45" height="45">
+                                <img src="<?php echo ($value['photo'] == null) ? 'storage/product/default.jpg' : $value['photo']; ?>" alt="user" class="rounded" width="45" height="45">
                               </div>
                             </td>
                             <td> <?php echo $value['pid'] ?> </td>

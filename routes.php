@@ -40,24 +40,24 @@ $route = new Router(new Request());
     $route->post('/change-password', 'User\ProfileController@modifyPassword');
 // ~Profile
 
-// Product Route
+// product Route
   // Show UI
     $route->get('/product/stock', 'User\ProfileController@edit');
-    $route->get('/product/add', 'Product\AddProductController@view');
-    $route->get('/product/search', 'Product\SearchProductController@searchView');
-    $route->get('/product/edit', 'Product\ProductController@view');
-    $route->get('/product/category', 'Product\ShowProductController@viewCategory');
-    $route->get('/product/category/filter', 'Product\ShowProductController@filterCategory');
-    $route->get('/filter-set', 'Product\ShowProductController@filterSet');
-    $route->get('/product/detail', 'Product\ShowProductController@viewDetail');
-    $route->get('/product/delete', 'Product\DeleteProductController@view');
+    $route->get('/product/add', 'product\AddProductController@view');
+    $route->get('/product/search', 'product\SearchProductController@searchView');
+    $route->get('/product/edit', 'product\ProductController@view');
+    $route->get('/product/category', 'product\ShowProductController@viewCategory');
+    $route->get('/product/category/filter', 'product\ShowProductController@filterCategory');
+    $route->get('/filter-set', 'product\ShowProductController@filterSet');
+    $route->get('/product/detail', 'product\ShowProductController@viewDetail');
+    $route->get('/product/delete', 'product\DeleteProductController@view');
   // Process
-    $route->post('/product/add', 'Product\AddProductController@add');
-    $route->post('/update-product', 'Product\ProductController@updateView');
-    $route->post('/product-update', 'Product\ProductController@update');  
-    $route->post('/search-product', 'Product\SearchProductController@searchView');
-    $route->post('/delete-product', 'Product\ProductController@remove');
-// ~Product
+    $route->post('/product/add', 'product\AddProductController@add');
+    $route->post('/update-product', 'product\ProductController@updateView');
+    $route->post('/product-update', 'product\ProductController@update');
+    $route->post('/search-product', 'product\SearchProductController@searchView');
+    $route->post('/delete-product', 'product\ProductController@remove');
+// ~product
 
 // Transaction Route
   // Show UI

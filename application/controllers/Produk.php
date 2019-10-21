@@ -16,9 +16,12 @@ class Produk extends CI_Controller
      */
     public function index()
     {
+        $uid = $this->session->userdata(Product_model::$UID);
+        $data = $this->product_model->get($uid);
+
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/left-sidebar');
-        $this->load->view('admin/product/add');
+        $this->load->view('admin/product/index', array('data' => $data));
         $this->load->view('admin/template/footer');
     }
 
@@ -52,7 +55,7 @@ class Produk extends CI_Controller
             return;
         }
 
-        $config['upload_path']   = __DIR__. '/../../Storage/Product/';
+        $config['upload_path']   = __DIR__ . '/../../storage/product/';
         $config['allowed_types'] = 'jpg|jpeg|png';
         $config['max_size']      = 100;
         $config['max_width']     = 1024;
@@ -63,7 +66,7 @@ class Produk extends CI_Controller
             $input = $this->input->post();
             $input[Product_model::$UID] = $this->session->userdata(Product_model::$UID);
             $input[Product_model::$PID] = $this->createNewPID($input[Product_model::$CATEGORY]);
-            $input[Product_model::$PHOTO] = $this->upload->data('full_path');
+            $input[Product_model::$PHOTO] = $this->upload->data('file_name');
 
             $this->product_model->insert($input);
             redirect('produk');

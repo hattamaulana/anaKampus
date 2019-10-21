@@ -10,7 +10,7 @@
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-75" src="<?php echo ($data['photo'] == null) ? 'Storage/Product/default.jpg': $data['photo'] ?>">
+                <img class="d-block w-75" src="<?php echo ($data['photo'] == null) ? 'storage/product/default.jpg': $data['photo'] ?>">
               </div>
             </div>
           </div>

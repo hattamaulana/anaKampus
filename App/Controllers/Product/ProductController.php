@@ -42,7 +42,7 @@ class ProductController extends Controller {
     $data_product = [ Product::$NAME , Product::$CATEGORY , Product::$PRICE , Product::$DESCRIPTION ];
     $data_product = parent::getInput($req, $data_product);
     $pid          = parent::getInput($req, [Product::$PID])[Product::$PID];
-    $photo_uri    = "Storage/Product/$pid-";
+    $photo_uri    = "storage/product/$pid-";
     $photo        = parent::getInputManually($_FILES, 'photo');
 
     if(! $photo['error'] == 4) {
