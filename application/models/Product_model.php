@@ -36,6 +36,16 @@ class Product_model extends CI_Model
     }
 
     /**
+     * Method ini digunakan untuk melakukan insert data.
+     *
+     * @param array $input
+     */
+    public function insert($input = array())
+    {
+        $this->db->insert(self::$TABLE, $input);
+    }
+
+    /**
      * Method ini digunakan untuk melakakukan update data.
      *
      * @param array $input
@@ -48,12 +58,14 @@ class Product_model extends CI_Model
     }
 
     /**
-     * Method ini digunakan untuk melakukan insert data.
+     * Method ini digunakan untuk menghapus data
+     * berdasarkan product id.
      *
-     * @param array $input
+     * @param string $pid
      */
-    public function insert($input = array())
+    public function delete($pid)
     {
-        $this->db->insert(self::$TABLE, $input);
+        $this->db->where(self::$PID, $pid);
+        $this->db->delete(self::$TABLE);
     }
 }

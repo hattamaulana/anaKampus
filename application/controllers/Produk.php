@@ -148,9 +148,11 @@ class Produk extends CI_Controller
     /**
      * @param $uid
      */
-    public function delete($uid)
+    public function delete($pid)
     {
-        die($uid);
+        $this->product_model->delete($pid);
+
+        redirect('produk');
     }
 
     /**
@@ -166,7 +168,7 @@ class Produk extends CI_Controller
         return strtoupper(substr($cat, 0, 1))
             . substr($uid, 1, 3)
             . substr($uid, 8, 11)
-            . date('u')
+            . date('B')
             . substr($cat, strlen($cat)-1, strlen($cat));
     }
 }
