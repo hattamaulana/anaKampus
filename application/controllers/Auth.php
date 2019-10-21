@@ -60,7 +60,6 @@ class Auth extends CI_Controller
                 }
             } else {
                 $this->session->set_flashdata('login', 'Password Salah, Silahkan ulangi lagi.');
-                die();
                 redirect('auth/signIn', 'refresh');
             }
         }

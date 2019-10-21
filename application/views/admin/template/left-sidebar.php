@@ -15,7 +15,7 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link active" href="#"
+                        <a class="nav-link active" href="<?= base_url(). 'Admin/' ?>"
                            data-toggle="collapse" data-target="#submenu-1"
                            aria-expanded="false" aria-controls="submenu-1"
                         >
@@ -26,7 +26,13 @@
                         <div id="submenu-1" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="<?= base_url(). 'Admin' ?>">
+                                        Tampilkan Profil
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?= base_url(). 'Admin/edit' ?>">
                                         Edit Profil
                                     </a>
                                 </li>

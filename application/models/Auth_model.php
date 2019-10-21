@@ -9,6 +9,18 @@ class Auth_model extends CI_Model
     public static $EMAIL = 'email';
     public static $PASSWORD = 'password';
 
+    public function get($uid)
+    {
+        $result = $this->db->get_where(self::$TABLE, array(self::$UID => $uid));
+        return $result->row_array();
+    }
+
+    public function update($input, $uid)
+    {
+        $this->db->where(self::$UID, $uid);
+        $this->db->update(self::$TABLE, $input);
+    }
+
     /**
      * Method ini digunakan untuk melakukan proses login.
      *
