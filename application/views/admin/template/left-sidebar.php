@@ -36,12 +36,6 @@
                                         Edit Profil
                                     </a>
                                 </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?= base_url(). 'auth/logout' ?>">
-                                        Logout
-                                    </a>
-                                </li>
                             </ul>
                         </div>
                     </li>
@@ -57,18 +51,31 @@
                         <div id="submenu-2" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
+                                    <a class="nav-link" href="<?= base_url(). 'produk' ?>">
+                                        Tampilkan Produk Saya
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
                                     <a class="nav-link" href="<?= base_url(). 'produk/add' ?>">
                                         Tambah Produk
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/cards.html">
+                                    <a class="nav-link" href="<?= base_url(). 'produk/manage' ?>">
                                         Manage Produk
                                     </a>
                                 </li>
                             </ul>
                         </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url(). 'auth/logout' ?>">
+                            <i class="fa fa-fw fa-sign-out-alt"></i>
+                            Logout
+                        </a>
                     </li>
                 </ul>
             </div>

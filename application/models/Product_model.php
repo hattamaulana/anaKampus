@@ -17,12 +17,39 @@ class Product_model extends CI_Model
 
     public function get($uid)
     {
-        $res = $this->db->get_where(self::$TABLE, array('uid' => $uid));
-
-        return $res->result_array();
+        return $this->db
+            -> get_where(self::$TABLE, array('uid' => $uid))
+            -> result_array();
     }
 
     /**
+     * Method ini digunaakan untuk mengambil data product berdasarkan id.
+     *
+     * @param string $pid
+     * @return array
+     */
+    public function get_pid($pid)
+    {
+        return $this->db
+            -> get_where(self::$TABLE, array(self::$PID => $pid))
+            -> row_array();
+    }
+
+    /**
+     * Method ini digunakan untuk melakakukan update data.
+     *
+     * @param array $input
+     * @param string $pid
+     */
+    public function update($input = array(), $pid)
+    {
+        $this->db->where(self::$PID, $pid);
+        $this->db->update(self::$TABLE, $input);
+    }
+
+    /**
+     * Method ini digunakan untuk melakukan insert data.
+     *
      * @param array $input
      */
     public function insert($input = array())

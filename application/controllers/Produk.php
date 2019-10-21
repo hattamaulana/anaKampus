@@ -7,6 +7,13 @@ class Produk extends CI_Controller
     {
         parent::__construct();
 
+        $config['upload_path']   = __DIR__ . '/../../storage/product/';
+        $config['allowed_types'] = 'jpg|jpeg|png';
+        $config['max_size']      = 10000;
+        $config['max_width']      = 2048;
+        $config['max_height']      = 2048;
+
+        $this->load->library('upload', $config);
         $this->load->library('form_validation');
         $this->load->model('product_model');
     }
@@ -55,13 +62,6 @@ class Produk extends CI_Controller
             return;
         }
 
-        $config['upload_path']   = __DIR__ . '/../../storage/product/';
-        $config['allowed_types'] = 'jpg|jpeg|png';
-        $config['max_size']      = 100;
-        $config['max_width']     = 1024;
-        $config['max_height']    = 1024;
-
-        $this->load->library('upload', $config);
         if ($this->upload->do_upload(Product_model::$PHOTO)) {
             $input = $this->input->post();
             $input[Product_model::$UID] = $this->session->userdata(Product_model::$UID);
@@ -74,6 +74,83 @@ class Produk extends CI_Controller
             $this->session->flashdata('form_error', 'File yang diapload terlalu bessar.');
             redirect('produk/add');
         }
+    }
+
+    public function manage()
+    {
+        $uid = $this->session->userdata(Product_model::$UID);
+        $data = $this->product_model->get($uid);
+
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/left-sidebar');
+        $this->load->view('admin/product/manage', array('data' => $data));
+        $this->load->view('admin/template/footer');
+    }
+
+    /**
+     * @param $uid
+     */
+    public function edit($pid)
+    {
+        $data = $this->product_model->get_pid($pid);
+
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/left-sidebar');
+        $this->load->view('admin/product/edit', array('data' => $data));
+        $this->load->view('admin/template/footer');
+    }
+
+    /**
+     * Method ini digunakan untuk mengupdate data product.
+     */
+    public function update()
+    {
+        $this->form_validation->set_rules(Product_model::$NAME, 'Nama', 'required');
+        $this->form_validation->set_rules(Product_model::$CATEGORY, 'Kategori', 'required');
+        $this->form_validation->set_rules(Product_model::$PRICE, 'Harga', 'required');
+        $this->form_validation->set_rules(Product_model::$DESCRIPTION, 'Deskripsi', 'required');
+
+        if ($this->form_validation->run() === false) {
+            $this->load->view('admin/template/header');
+            $this->load->view('admin/template/left-sidebar');
+            $this->load->view('admin/product/add');
+            $this->load->view('admin/template/footer');
+            return;
+        }
+
+        $input = $this->input->post();
+        $input[Product_model::$UID] = $this->session->userdata(Product_model::$UID);
+        $this->product_model->update($input, $input[Product_model::$PID]);
+
+        redirect('produk');
+    }
+
+    /**
+     * Method ini digunakan untuk mengupload dan mengupdate
+     * data photo dari product.
+     */
+    public function update_photo()
+    {
+        $input = $this->input->post();
+        $pid = $input[Product_model::$PID];
+
+        if ($this->upload->do_upload(Product_model::$PHOTO)) {
+            $input[Product_model::$PHOTO] = $this->upload->data('file_name');
+            $this->product_model->update($input, $pid);
+
+            redirect('produk');
+        } else {
+            $this->session->flashdata('form_error', 'File yang diapload terlalu bessar.');
+            redirect('produk/edit/'. $pid);
+        }
+    }
+
+    /**
+     * @param $uid
+     */
+    public function delete($uid)
+    {
+        die($uid);
     }
 
     /**

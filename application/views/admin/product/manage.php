@@ -34,15 +34,14 @@
                                                 <th class="border-0"
                                                     style="text-align: center"
                                                 >
-                                                    ID Produk
+                                                    ID
                                                 </th>
                                                 <th class="border-0">
-                                                    Photo Produk
+                                                    Photo
                                                 </th>
                                                 <th class="border-0">Nama</th>
-                                                <th class="border-0">Kategori</th>
-                                                <th class="border-0">Harga</th>
-                                                <th class="border-0">Deskripsi</th>
+                                                <th class="border-0">Edit</th>
+                                                <th class="border-0">Hapus</th>
                                             </tr>
                                         </thead>
 
@@ -60,9 +59,22 @@
                                                                     . $value[Product_model::$PHOTO])?>">
                                                     </td>
                                                     <td> <?php echo $value[Product_model::$NAME] ?> </td>
-                                                    <td> <?php echo $value[Product_model::$CATEGORY] ?> </td>
-                                                    <td> <?php echo $value[Product_model::$PRICE] ?> </td>
-                                                    <td> <?php echo $value[Product_model::$DESCRIPTION] ?> </td>
+
+                                                    <td>
+                                                        <a class="nav-link"
+                                                           href="<?= base_url(). 'produk/edit/'
+                                                                . $value[Product_model::$PID] ?>">
+                                                            <i class="fa fa-fw fa-edit"></i>
+                                                        </a>
+                                                    </td>
+
+                                                    <td>
+                                                        <a class="nav-link"
+                                                           href="<?= base_url(). 'produk/delete/'
+                                                                . $value[Product_model::$PID] ?>">
+                                                            <i class="fa fa-fw fa-trash-alt"></i>
+                                                        </a>
+                                                    </td>
                                                 </tr>
                                                 <?php } ?>
                                         </tbody>
