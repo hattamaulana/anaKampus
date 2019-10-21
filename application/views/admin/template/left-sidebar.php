@@ -57,7 +57,7 @@
                         <div id="submenu-2" class="collapse submenu bg-light" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/cards.html">
+                                    <a class="nav-link" href="<?= base_url(). 'produk/add' ?>">
                                         Tambah Produk
                                     </a>
                                 </li>
